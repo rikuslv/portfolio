@@ -1,0 +1,30 @@
+body
+{
+  background: #2c3e50;
+  font-family: Cursive;
+  color: white;
+}
+.atext{
+  position: absolute;
+  left: 16%;
+  top: 23%;
+  font-size: 45px;
+}
+.txt{
+position: absolute;
+  left: 23%;
+  top: 33%;
+}
+
+iframe{
+  position: absolute;
+  right: 20px;
+  top: 25%; 
+}
+.study{
+  position: absolute;
+  position: absolute;
+  right: 29%;
+  top: 16%; 
+  font-size: 25px;
+}

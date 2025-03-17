@@ -1,0 +1,154 @@
+body
+{
+  background: #2c3e50;
+}
+a{
+  color: white;
+  font-size: 30px;
+  font-family: Cursive;
+}
+h1{
+    color: white;
+  font-size: 60px;
+font-family: Cursive;
+text-align: center;
+}
+/* ========================
+      BUTTON ONE
+======================== */
+.txt{
+  padding-top: 15px;
+
+}
+.btn-one {
+  color: #FFF;
+  font-size: 30px; 
+  width: 350px; 
+  height: 60px; 
+  display: flex;
+  align-items: center; /* Vertikāli centrē tekstu */
+  justify-content: center; /* Horizontāli centrē tekstu */
+  transition: all 0.5s;
+  position: absolute;
+  right: 350px; /* Pārvieto pa labi */
+  top: 319px; /* Pārvieto uz leju */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Padara borderi redzamāku */
+  border-radius: 10px; /* Apaļāki stūri */
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+
+.btn-one span {
+  z-index: 2; 
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+}
+
+.btn-one::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
+}
+
+.btn-one::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
+}
+
+.btn-one:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255,255,255,0);
+}
+
+.btn-one:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255,255,255,0);
+}
+
+.btn-one:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+/* ========================
+      BUTTON TWO
+======================== */
+.btn-two {
+  position: relative;
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  background: transparent;
+  border: 2px solid white;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-two .txt {
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0;
+  transition: letter-spacing 0.3s ease-in-out;
+}
+
+/* Teksts izplešas hover laikā */
+.btn-two:hover .txt {
+  letter-spacing: 5px;
+}
+
+/* Līnijas efekts */
+.btn-two::before,
+.btn-two::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: width 0.4s ease-in-out;
+}
+
+.btn-two::before {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-two::after {
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+/* Hover animācija */
+.btn-two:hover::before,
+.btn-two:hover::after {
+  width: 70%;
+}
+.box-2 {
+  position: absolute;
+  top: 44%;
+  left: 30%;
+  height: 20px;
+  transform: translate(-50%, -50%);
+}

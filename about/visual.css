@@ -1,0 +1,50 @@
+body{
+    background: #2c3e50;
+    font-family: Cursive;
+    color: white;
+}
+h1{
+	position: absolute;
+	left: 30%;
+	top: 12%;
+	font-size: 40px;
+}
+.mintxt{
+	position: absolute;
+	left: 33%;
+	top: 21%;
+	font-size: 20px;
+}
+.txt{
+	position: absolute;
+	left: 31%;
+	top: 25%;
+	font-size: 23px;
+}
+.mintxt2{
+	position: absolute;
+	left: 33%;
+	top: 45%;
+	font-size: 20px;
+}
+.txt2{
+	position: absolute;
+	left: 31%;
+	top: 50%;
+	font-size: 23px;
+}
+a{
+	color: white;
+}
+.circular--square {
+  vertical-align: middle;
+  width:400px;
+  height: 400pxpx;
+  border-radius: 50%;
+ display: block;
+  left: 20px;
+  margin-right: auto;
+   object-fit: cover; 
+  border-radius: 50px;
+  margin-top: 15px;
+ }

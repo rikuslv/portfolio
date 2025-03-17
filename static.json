@@ -1,0 +1,9 @@
+{
+  "build": {
+    "cmd": "echo 'Static site'",
+    "output": "."
+  },
+  "static": {
+    "root": "."
+  }
+}
