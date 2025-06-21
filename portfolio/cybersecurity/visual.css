@@ -58,3 +58,9 @@ a{
   top: 27%;
   object-fit: cover;
 }
+.abouth2{
+  font-size: 50px;
+  position: absolute;
+  left: 30%;
+  top: 30%;
+}
