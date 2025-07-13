@@ -68,6 +68,12 @@ a{
 .about2{
   position: absolute;
   left: 30%;
-  top: 115%;
+  top: 148%;
   font-size: 15px;
+}
+.seb{
+  position: absolute;
+  left: 30%;
+  top: 108%;
+  object-fit: cover;
 }
