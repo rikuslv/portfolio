@@ -1,4 +1,4 @@
-# CHAME Konfigurācija
+# CHAME configuration
 Versija: 1.0
 Autors: richardsgrava.com
 Funkcijas:
