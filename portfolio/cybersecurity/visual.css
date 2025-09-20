@@ -27,9 +27,9 @@ h1{
   border-top: 2px solid white;
   width: 400px;
   position: absolute;
-  top: 5%;
+  top: 28%;
   left: 10%;
-  transform: translate(-50%, -50%);
+  transform: translate(-52%, -50%);
 }
 .tasks{
   font-size: 25px;
@@ -86,6 +86,7 @@ a{
   object-fit: cover;
 
 }
+
 
 
 
