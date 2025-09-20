@@ -16,20 +16,24 @@ h1 {
     top: 20%;
     left: 3%;
 }
-.prg, .ph {
-  position: absolute;
-  top: 70px;           /* starts 20px below navbar, if navbar ~50px high */
-  width: 50%;          /* each image takes 50% of width */
-  height: calc(100vh - 70px); /* full viewport height minus top offset */
-  object-fit: cover;   /* cover container proportionally */
-}
-
 .prg {
-  left: 0;             /* left side */
+  position: absolute;
+  top: 70px;       
+  left: 0;            
+  width: 50%;         
+  height: calc(100vh - 70px); 
+  object-fit: cover;
+  z-index: 1;
 }
 
 .ph {
-  right: 0;            /* right side */
+  position: absolute;
+  top: 70px;         
+  right: 0;           
+  width: 50%;        
+  height: calc(100vh - 70px);
+  object-fit: cover;
+  z-index: 1;
 }
 
 
@@ -43,6 +47,7 @@ h1 {
     border-radius: 50px;
     box-shadow:0px 0px 6px 2px rgba(0, 0, 0, 0.5) inset;
 }
+
 
 
 
