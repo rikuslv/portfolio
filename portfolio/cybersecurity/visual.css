@@ -27,7 +27,7 @@ h1{
   border-top: 2px solid white;
   width: 400px;
   position: absolute;
-  top: 25%;
+  top: 15%;
   left: 10%;
   transform: translate(-50%, -50%);
 }
@@ -86,4 +86,5 @@ a{
   object-fit: cover;
 
 }
+
 
