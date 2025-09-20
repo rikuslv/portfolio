@@ -1,6 +1,6 @@
 body{
     background: #2c3e50;
-    font-family: Petrov Sans Variable;
+    font-family: Roboto Mono;
     color: white;
 }
 h1{
@@ -48,5 +48,6 @@ a{
   border-radius: 50px;
   margin-top: 15px;
  }
+
 
 
