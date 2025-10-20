@@ -1,31 +1,111 @@
 <!doctype html>
 <html lang="lv">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Richards Grava</title>
 
-  <!-- /* External CSS files */ -->
+  <!-- Ārējie CSS faili -->
   <link rel="stylesheet" href="navigation.css">
   <link rel="stylesheet" href="visual.css">
   <link rel="shortcut icon" type="image/x-icon" href="logo.png">
 
-  <!-- /* Google Material Symbols font link */ -->
-  
-    /*  Style for Material Symbols icon */ 
+  <!-- Google Material Symbols fonta saite -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <style>
+    /* Stils Material Symbols ikonai */
     .material-symbols-outlined {
       font-variation-settings:
         'FILL' 0,
         'wght' 400,
         'GRAD' 0,
         'opsz' 24;
-      font-size: 30px;   /*  Icon size */ 
-      color: #e3e3e3;    /* Icon color */ 
-      position: absolute; /* position absolute */
-      top: 20px;          /* distance from top */
-      left: 90%;        
+      font-size: 30px;
+      color: #e3e3e3;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
 
+    /* Pamata lapas stils */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #121212;
+      color: #e3e3e3;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; /* ļauj salocīties mobilajā skatā */
+      background: #1f1f1f;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+    }
+
+    h1 {
+      margin-top: 60px;
+      font-size: 40px;
+    }
+
+    .dh {
+      font-size: 20px;
+      color: #bbb;
+      margin-bottom: 20px;
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 10px;
+    }
+
+    .images img {
+      max-width: 45%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* 📱 RESPONSĪVĀ DAĻA — TELEFONIEM */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+
+      .dh {
+        font-size: 16px;
+      }
+
+      nav a {
+        font-size: 16px;
+        margin: 5px;
+      }
+
+      .images img {
+        max-width: 90%; /* pilns platums telefonā */
+      }
+
+      .material-symbols-outlined {
+        font-size: 26px;
+        top: 15px;
+        right: 15px;
+      }
     }
   </style>
 </head>
@@ -39,27 +119,15 @@
     <div class="animation start-home"></div>
   </nav>
 
-  <!-- /* Only the icon displayed */ -->
+  <!-- Tikai ikona -->
   <span class="material-symbols-outlined" aria-hidden="true">mobile_share</span>
 
   <h1>Richards Grava</h1>
   <p class="dh">Cybersecurity | Photographer</p>
   
-<div class="images">
-  <img src="prg.webp" class="prg" alt="prg">
-  <img src="ph.webp" class="ph" alt="ph">
-</div>
-  
+  <div class="images">
+    <img src="prg.webp" class="prg" alt="Programming image">
+    <img src="ph.webp" class="ph" alt="Photography image">
+  </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
