@@ -3,22 +3,24 @@ body{
     font-family: Roboto Mono;
     color: white;
 }
+
 .title{
 	font-size: 50px;
 	position: absolute;
 	left: 5%;
 	top: 5%;
 }
+
 .newst1{
 	font-size: 30px;
 	position: absolute;
 	left: 21%;
 	top: 20%;
 }
+
 .news1{
 	font-size: 25px;
 	position: absolute;
 	left: 31%;
 	top: 28%;
 }
-
