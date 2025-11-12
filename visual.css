@@ -28,7 +28,7 @@ a:hover {
 h1 {
     font-size: 40px;
     margin: 40px 0 10px 0;
-    text-align: left; /* jo teksts būs kreisajā kolonnā */
+    text-align: left;
 }
 
 .mintxt, .mintxt2 {
@@ -43,7 +43,7 @@ h1 {
 }
 
 /* ===============================
-   IMAGES (CIRCLE OPTION)
+   IMAGES (ROUND OPTION)
    =============================== */
 
 .circular--square {
@@ -56,7 +56,7 @@ h1 {
 }
 
 /* ===============================
-   3-COLUMN LAYOUT (NEW)
+   3-COLUMN DESKTOP LAYOUT
    =============================== */
 
 .three-column {
@@ -75,13 +75,11 @@ h1 {
     width: 30%;
 }
 
-/* Left: text section */
 .column-left {
     font-size: 20px;
     line-height: 1.6;
 }
 
-/* Center + Right images */
 .column-center img,
 .column-right img {
     width: 100%;
@@ -91,7 +89,17 @@ h1 {
 }
 
 /* ===============================
-   RESPONSIVE (MOBILE)
+   DESKTOP-CONTAINER
+   =============================== */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+/* ===============================
+   RESPONSIVE – LARGE TABLET
    =============================== */
 
 @media (max-width: 900px) {
@@ -117,23 +125,12 @@ h1 {
     }
 }
 
-/* ===============================
-   OPTIONAL CONTAINER
-   =============================== */
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding-top: 100px;
-}
-
-
 /* ===========================================
-   MOBILE VERSION – ONLY FOR SMALL SCREENS
+   FULL MOBILE RESPONSIVE FIX
    =========================================== */
+
 @media (max-width: 750px) {
 
-  /* Viss centrējas un paliek kolonnā */
   body {
     padding: 20px;
     text-align: center !important;
@@ -153,28 +150,31 @@ h1 {
     font-size: clamp(16px, 5vw, 26px) !important;
   }
 
-  /* Bildes – uz 100% platumu */
-  img, iframe, .circular--square, .bandit, .seb {
+  /* Bildes – pilns platums mobilajam */
+  img, iframe,
+  .circular--square,
+  .bandit, .seb {
     position: static !important;
     width: 100% !important;
     height: auto !important;
     margin: 20px 0 !important;
   }
 
-  /* Atlaižam pogas un box elementus */
-  .btn, .btn-one, .btn-two, .box-1, .box-2 {
+  /* Pogu un box elementu normalizācija */
+  .btn, .btn-one, .btn-two,
+  .box-1, .box-2 {
     position: static !important;
-    margin: 20px auto !important;
     width: 100% !important;
     max-width: 350px !important;
+    margin: 20px auto !important;
   }
 
-  /* Lieko līniju slēpšana mobilajā */
+  /* Slēpjam desktop līnijas */
   .vl, .hl, .hl2 {
     display: none !important;
   }
 
-  /* NAVIGĀCIJA mobilajam */
+  /* MOBILĀ NAVIGĀCIJA */
   nav, .navbar {
     width: 100% !important;
     height: auto !important;
@@ -191,8 +191,9 @@ h1 {
     width: auto !important;
   }
 
-  /* Animācijas slēdzam ārā – telefonā tās kaitina */
+  /* Navigation animation OFF */
   nav .animation {
     display: none !important;
   }
+
 }
