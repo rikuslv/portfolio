@@ -30,3 +30,71 @@ iframe{
   font-size: 25px;
 }
 
+/* ===========================================
+   MOBILE VERSION – ONLY FOR SMALL SCREENS
+   =========================================== */
+@media (max-width: 750px) {
+
+  /* Viss centrējas un paliek kolonnā */
+  body {
+    padding: 20px;
+    text-align: center !important;
+  }
+
+  h1, h2, h3, p,
+  .txt, .txt2, .mintxt, .mintxt2,
+  .tasks, .newst1, .title, .study,
+  .atext, .about1, .about2, .abouth1, .abouth2 {
+    position: static !important;
+    margin: 20px auto !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: clamp(16px, 5vw, 26px) !important;
+  }
+
+  /* Bildes – uz 100% platumu */
+  img, iframe, .circular--square, .bandit, .seb {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 20px 0 !important;
+  }
+
+  /* Atlaižam pogas un box elementus */
+  .btn, .btn-one, .btn-two, .box-1, .box-2 {
+    position: static !important;
+    margin: 20px auto !important;
+    width: 100% !important;
+    max-width: 350px !important;
+  }
+
+  /* Lieko līniju slēpšana mobilajā */
+  .vl, .hl, .hl2 {
+    display: none !important;
+  }
+
+  /* NAVIGĀCIJA mobilajam */
+  nav, .navbar {
+    width: 100% !important;
+    height: auto !important;
+    padding: 10px 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  nav a, .navbar a {
+    font-size: 14px !important;
+    padding: 8px 12px !important;
+    width: auto !important;
+  }
+
+  /* Animācijas slēdzam ārā – telefonā tās kaitina */
+  nav .animation {
+    display: none !important;
+  }
+}
