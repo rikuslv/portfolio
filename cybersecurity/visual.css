@@ -1,0 +1,157 @@
+/* ===========================
+   Desktop )
+=========================== */
+
+body {
+  background-color: #2c3e50;
+  font-family: Roboto Mono;
+  color: white;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+/* Vertical line */
+.vl {
+  border-left: 2px solid white;
+  height: 6000px;
+  position: absolute;
+  left: 19%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Horizontal line */
+.hl {
+  border-top: 2px solid white;
+  width: 400px;
+  position: absolute;
+  top: 23%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+}
+
+.tasks {
+  font-size: 25px;
+}
+
+a {
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #2c3e50;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #35495e;
+  border-radius: 50px;
+  box-shadow: 0 0 6px 2px rgba(0,0,0,0.5) inset;
+}
+
+/* Text + image placements */
+.abouth1 {
+  font-size: 50px;
+  position: absolute;
+  left: 30%;
+  top: 10%;
+}
+
+.about1 {
+  position: absolute;
+  left: 30%;
+  top: 65%;
+  font-size: 15px;
+}
+
+.bandit {
+  position: absolute;
+  left: 30%;
+  top: 27%;
+  object-fit: cover;
+}
+
+.abouth2 {
+  font-size: 50px;
+  position: absolute;
+  left: 30%;
+  top: 90%;
+}
+
+.about2 {
+  position: absolute;
+  left: 30%;
+  top: 148%;
+  font-size: 15px;
+}
+
+.seb {
+  position: absolute;
+  left: 30%;
+  top: 108%;
+  object-fit: cover;
+}
+
+
+
+/* ===========================
+     MOBILE FIX (the good part)
+=========================== */
+@media (max-width: 700px) {
+
+  body {
+    padding: 15px;
+  }
+
+  /* No absolutely positioned chaos on mobile */
+  h1,
+  h2,
+  p,
+  .tasks,
+  .abouth1,
+  .about1,
+  .abouth2,
+  .about2 {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 20px 0 !important;
+    text-align: center !important;
+  }
+
+  img {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 20px 0 !important;
+  }
+
+  /* Hide lines – telefonā nav vajadzīgas */
+  .vl,
+  .hl,
+  .hl2 {
+    display: none !important;
+  }
+
+  /* Titles resized */
+  .abouth1,
+  .abouth2 {
+    font-size: 32px !important;
+  }
+
+  p {
+    font-size: 16px !important;
+    padding: 0 10px;
+  }
+
+  .tasks,
+  .hl,
+  .hl2,
+  .vl {
+    display: none !important;
+}
+}

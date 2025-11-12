@@ -1,128 +1,116 @@
-/* ===============================
-   GLOBAL STYLES
-   =============================== */
+/* ======================
+   Portfolio page styles
+====================== */
 
 body {
-    background: #2c3e50;
-    font-family: 'Roboto Mono', monospace;
-    color: white;
-    margin: 0;
-    padding: 0;
+  background: #2c3e50;
 }
 
-/* Links */
 a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
+  color: white;
+  text-decoration: none;
+  font-family: "Roboto Mono";
 }
-
-a:hover {
-    color: #1abc9c;
-}
-
-/* ===============================
-   TITLES & TEXT
-   =============================== */
 
 h1 {
-    font-size: 40px;
-    margin: 40px 0 10px 0;
-    text-align: left; /* jo teksts būs kreisajā kolonnā */
+  color: white;
+  font-size: 60px;
+  font-family: Cursive;
+  text-align: center;
+  margin-top: 80px;
 }
 
-.mintxt, .mintxt2 {
-    font-size: 20px;
-    color: #ccc;
-    margin-top: 10px;
+/* ======================
+     NEW BUTTON STYLE
+====================== */
+
+.btn-one,
+.btn-two {
+  width: 350px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid rgba(255,255,255,0.6);
+  border-radius: 15px;
+  background-color: rgba(255,255,255,0.1);
+
+  color: white;
+  font-size: 28px;
+  font-family: "Roboto Mono";
+
+  cursor: pointer;
+  transition: 0.25s ease;
 }
 
-.txt, .txt2 {
-    font-size: 23px;
-    margin-top: 10px;
+/* Button hover – simple glow */
+.btn-one:hover,
+.btn-two:hover {
+  border-color: white;
+  background-color: rgba(255,255,255,0.2);
 }
 
-/* ===============================
-   IMAGES (CIRCLE OPTION)
-   =============================== */
-
-.circular--square {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-    margin: 40px auto;
+/* Positioning for desktop */
+.box-1 {
+  position: absolute;
+  top: 350px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* ===============================
-   3-COLUMN LAYOUT (NEW)
-   =============================== */
+.box-2 {
+  position: absolute;
+  top: 460px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-.three-column {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1400px;
-    margin: 60px auto;
+/* ======================
+   MOBILE FIXES
+====================== */
+@media (max-width: 700px) {
+
+  body {
     padding: 20px;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.column-left,
-.column-center,
-.column-right {
-    width: 30%;
-}
+  h1 {
+    font-size: 40px;
+    margin-top: 20px;
+  }
 
-/* Left: text section */
-.column-left {
-    font-size: 20px;
-    line-height: 1.6;
-}
-
-/* Center + Right images */
-.column-center img,
-.column-right img {
+  /* reset boxes */
+  .box-1,
+  .box-2 {
+    all: unset;
+    display: block;
     width: 100%;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  /* Buttons become full width */
+  .btn-one,
+  .btn-two {
+    width: 90%;
     max-width: 380px;
-    border-radius: 20px;
-    object-fit: cover;
-}
+    height: 70px;
+    margin: 10px auto;
+    border-radius: 15px;
+    font-size: 26px;
+    background-color: rgba(255,255,255,0.1);
+  }
 
-/* ===============================
-   RESPONSIVE (MOBILE)
-   =============================== */
+  /* Photography goes LAST (below Cybersecurity) */
+  .box-1 { order: 1; } /* Cybersecurity */
+  .box-2 { order: 2; } /* Photography */
 
-@media (max-width: 900px) {
-    .three-column {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .column-left,
-    .column-center,
-    .column-right {
-        width: 100%;
-    }
-
-    .column-center img,
-    .column-right img {
-        max-width: 90%;
-        margin: 0 auto;
-    }
-
-    h1 {
-        text-align: center;
-    }
-}
-
-/* ===============================
-   OPTIONAL CONTAINER
-   =============================== */
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding-top: 100px;
+  /* Hide nav animation */
+  nav .animation {
+    display: none !important;
+  }
 }
