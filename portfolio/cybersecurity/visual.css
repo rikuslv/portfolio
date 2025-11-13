@@ -18,8 +18,8 @@ h1 {
   height: 6000px;
   position: absolute;
   left: 19%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;   /* var būt arī 0% */
+  transform: none; /* ← Izmet ārā */
 }
 
 /* Horizontal line */
@@ -29,11 +29,12 @@ h1 {
   position: absolute;
   top: 23%;
   left: 10%;
-  transform: translate(-50%, -50%);
+  transform: none; /* ← Izmet ārā */
 }
 
 .tasks {
   font-size: 25px;
+  position: relative;
 }
 
 a {
@@ -176,4 +177,5 @@ a {
 }
 
 }
+
 
