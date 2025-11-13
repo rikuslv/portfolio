@@ -96,6 +96,26 @@ a {
 }
 
 
+.abouth3 {
+  font-size: 50px;
+  position: absolute;
+  left: 30%;
+  top: 175%;
+}
+
+.about3 {
+  position: absolute;
+  left: 30%;
+  top: 235%;
+  font-size: 15px;
+}
+.evilnox{
+  position: absolute;
+  left: 30%;
+  top: 192%;
+  object-fit: cover;
+}
+
 
 /* ===========================
      MOBILE FIX (the good part)
