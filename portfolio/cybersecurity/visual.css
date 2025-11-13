@@ -17,7 +17,7 @@ h1 {
   border-left: 2px solid white;
   height: 6000px;
   position: absolute;
-  left: 19%;
+  left: 17%;
   top: 0;   /* var būt arī 0% */
   transform: none; /* ← Izmet ārā */
 }
@@ -28,7 +28,7 @@ h1 {
   width: 400px;
   position: absolute;
   top: 23%;
-  left: 10%;
+  left: 8%;
   transform: none; /* ← Izmet ārā */
 }
 
@@ -177,5 +177,6 @@ a {
 }
 
 }
+
 
 
