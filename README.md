@@ -7,6 +7,4 @@ This is my personal portfolio website. It showcases my work, skills, education a
 ### Technologies Used
 - HTML
 - CSS
-- JavaScript
-
 <img width="1366" height="573" alt="image" src="https://github.com/user-attachments/assets/006ccbbb-32af-4be8-9b3b-d0c6bd48c559" />
