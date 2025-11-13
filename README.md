@@ -1,6 +1,4 @@
-I create this site with ChatGPT 5.1
 
-This is my porfolio website.
 
 <img width="1578" height="463" alt="image" src="https://github.com/user-attachments/assets/2d732738-a99c-4ef9-80f2-157fa82019a6" />
 
