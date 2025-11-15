@@ -17,8 +17,8 @@ h1 {
   border-left: 2px solid white;
   height: 6000px;
   position: absolute;
-  left: 17%;
-  top: 0;   /* var būt arī 0% */
+  left: 13.5%;
+  top: -35%;   /* var būt arī 0% */
   transform: none; /* ← Izmet ārā */
 }
 
@@ -27,8 +27,8 @@ h1 {
   border-top: 2px solid white;
   width: 400px;
   position: absolute;
-  top: 23%;
-  left: 8%;
+  top: -10%;
+  left: -5%;
   transform: none; /* ← Izmet ārā */
 }
 
@@ -115,6 +115,24 @@ a {
   left: 30%;
   top: 192%;
   object-fit: cover;
+}
+.abouth4 {
+  font-size: 50px;
+  position: absolute;
+  left: 30%;
+  top: 255%;
+}
+.kiberplesis{
+  position: absolute;
+  left: 30%;
+  top: 270%;
+  object-fit: cover;
+}
+.about4 {
+  position: absolute;
+  left: 30%;
+  top: 320%;
+  font-size: 15px;
 }
 
 
