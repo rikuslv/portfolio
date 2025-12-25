@@ -135,6 +135,26 @@ a {
   font-size: 15px;
 }
 
+.about5 {
+  position: absolute;
+  left: 30%;
+  top: 400%;
+  font-size: 15px;
+}
+
+.abouth5 {
+  font-size: 50px;
+  position: absolute;
+  left: 30%;
+  top: 345%;
+}
+
+.jangow{
+  position: absolute;
+  left: 30%;
+  top: 362%;
+  object-fit: cover;
+}
 
 /* ===========================
      MOBILE FIX (the good part)
