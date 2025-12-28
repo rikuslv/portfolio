@@ -10,12 +10,9 @@
   <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
 
   <style>
+  
     .material-symbols-outlined {
-      font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24;
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       font-size: 30px;
       color: #e3e3e3;
       position: absolute;
@@ -46,6 +43,14 @@
     nav a:hover {
       color: #00bcd4;
     }
+
+    /* JAUNS STILS TULKOTĀJA POGAI */
+    #google_translate_element {
+      padding: 10px;
+      background: #1f1f1f;
+      border-top: 1px solid #333;
+    }
+
     h1 {
       margin-top: 60px;
       font-size: 40px;
@@ -68,28 +73,16 @@
       border-radius: 10px;
     }
     @media (max-width: 600px) {
-      h1 {
-        font-size: 28px;
-      }
-      .dh {
-        font-size: 16px;
-      }
-      nav a {
-        font-size: 16px;
-        margin: 5px;
-      }
-      .images img {
-        max-width: 90%;
-      }
-      .material-symbols-outlined {
-        font-size: 26px;
-        top: 15px;
-        right: 15px;
-      }
+      h1 { font-size: 28px; }
+      .dh { font-size: 16px; }
+      nav a { font-size: 16px; margin: 5px; }
+      .images img { max-width: 90%; }
+      .material-symbols-outlined { font-size: 26px; top: 15px; right: 15px; }
     }
   </style>
 </head>
 <body>
+
   <nav class="navbar">
     <a href="#">Home</a>
     <a href="about/about.html">About Me</a>
@@ -98,8 +91,10 @@
     <a href="conntact/conntact.html">Contact</a>
     <div class="animation start-home"></div>
   </nav>
-<div class="three-column">
 
+  <div id="google_translate_element"></div>
+
+  <div class="three-column">
     <div class="column-left">
         <h1>Richards Grava</h1>
         <div class="min">Cybersecurity | Photographer</div>
@@ -112,6 +107,17 @@
     <div class="column-right">
         <img src="ph.webp" alt="Photography image">
     </div>
+  </div>
 
-</div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en', // Norādi, ka tavs saturs oriģināli ir angliski
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+</body>
+</html>
