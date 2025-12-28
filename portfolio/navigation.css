@@ -35,7 +35,7 @@
     color: #000;
 }
 
-/* Hidden on desktop */
+/* Hidden by default on desktop */
 .menu-icon {
     display: none;
     color: white;
@@ -49,28 +49,35 @@
    =============================== */
 @media only screen and (max-width: 700px) {
     .navbar {
+        /* Forces full transparency on mobile */
         display: flex !important;
-        background: transparent !important; /* No background bar on mobile */
+        background: transparent !important;
+        background-color: transparent !important;
         box-shadow: none !important;
-        width: 100%;
-        padding: 10px 20px;
-        margin: 10px 0 !important;
+        border: none !important;
         
-        /* Pushes the icon to the LEFT */
+        width: 100%;
+        padding: 15px 20px;
+        margin: 0 auto !important;
+        
+        /* Positions the hamburger icon on the LEFT */
         justify-content: flex-start !important; 
     }
 
     .menu-icon {
         display: block !important;
+        /* Ensures icon is clearly visible on dark background */
+        color: #ffffff !important; 
     }
 
     .nav-links {
+        /* Hidden until 'active' class is added via JS */
         display: none; 
         flex-direction: column;
         position: absolute;
         top: 60px;
         
-        /* Menu dropdown appears on the LEFT */
+        /* Dropdown aligns to the LEFT */
         left: 20px; 
         right: auto;
         
@@ -82,15 +89,17 @@
         box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
+    /* Shown when the menu icon is clicked */
     .nav-links.active {
         display: flex !important;
     }
 
     .nav-links a {
         margin: 0;
-        text-align: left; /* Text aligned to the left */
-        padding: 12px 25px;
+        text-align: left; 
+        padding: 15px 25px;
         width: 100%;
-        font-size: 16px;
+        font-size: 18px;
+        border-radius: 0;
     }
 }
