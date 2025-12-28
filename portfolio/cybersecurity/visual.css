@@ -28,7 +28,7 @@ h1 {
   width: 400px;
   position: absolute;
   top: -10%;
-  left: -5%;
+  left: -7%;
   transform: none; /* ← Izmet ārā */
 }
 
@@ -215,6 +215,7 @@ a {
 }
 
 }
+
 
 
 
