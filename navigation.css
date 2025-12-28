@@ -1,5 +1,5 @@
 /* ===============================
-   DATORA VERSIJA (Desktop)
+   DESKTOP VERSION
    =============================== */
 .navbar {
     margin: 30px auto;
@@ -30,7 +30,7 @@
     color: #000;
 }
 
-/* Sākumā paslēpjam ikonu (datora versijā) */
+/* Hide the hamburger icon by default (Desktop) */
 .menu-icon {
     display: none;
     color: white;
@@ -39,31 +39,34 @@
 }
 
 /* ===============================
-   MOBILĀ VERSIJA (Telefoniem)
+   MOBILE VERSION (Screens below 700px)
    =============================== */
 @media only screen and (max-width: 700px) {
     .navbar {
-        /* Iespējojam joslu mobilajā skatā */
+        /* Ensure navbar is visible on mobile */
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
         height: auto !important;
         margin: 20px auto !important;
         
-        justify-content: flex-start; /* Poga būs kreisajā pusē */
+        /* Align icon to the left */
+        justify-content: flex-start; 
         width: 90%;
         padding: 10px 20px;
     }
 
+    /* Show hamburger icon on mobile */
     .menu-icon {
-        display: block; /* Parādām ikonu uz telefona */
+        display: block; 
     }
 
     .nav-links {
-        display: none; /* Sākumā paslēpjam sarakstu */
+        /* Hide links by default on mobile */
+        display: none; 
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Sākas tieši zem navbar */
+        top: 100%; /* Appears directly below navbar */
         left: 0;
         background: #151515;
         width: 100%;
@@ -74,7 +77,7 @@
         margin-top: 5px;
     }
 
-    /* Kad nospiež pogu, JS pievieno šo klasi */
+    /* Active class added via JavaScript to show the menu */
     .nav-links.active {
         display: flex;
     }
