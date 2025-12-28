@@ -16,6 +16,11 @@
     z-index: 1001;
 }
 
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
 .navbar a {
     color: #ffffff;
     font-size: 18px;
@@ -30,87 +35,54 @@
     color: #000;
 }
 
-/* Hide the hamburger icon by default (Desktop) */
 .menu-icon {
     display: none;
     color: white;
     cursor: pointer;
     font-size: 30px;
+    background: #151515; /* Dark background like in the image */
+    padding: 10px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
 /* ===============================
    MOBILE VERSION (Screens below 700px)
    =============================== */
 @media only screen and (max-width: 700px) {
     .navbar {
-        display: flex !important;
-        background: transparent !important; /* Forces background to be transparent */
-        box-shadow: none !important;        /* Removes the shadow */
-        border: none !important;            /* Ensures no borders are visible */
-        
-        justify-content: flex-start; 
-        width: 90%;
-        padding: 10px 20px;
-        margin: 20px auto !important;
-    }
-
-    .nav-links {
-        display: none; 
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        
-        background: transparent !important; /* Removes background from the dropdown container */
-        box-shadow: none !important;        /* Removes shadow from the dropdown */
-        
+        background: transparent !important; /* Main bar invisible */
+        box-shadow: none !important;
         width: 100%;
-        z-index: 1000;
+        justify-content: center !important; /* Center the icon like in the image */
+        margin: 10px auto !important;
     }
 
-    .nav-links.active {
-        display: flex !important;
-    }
-}
-    /* Show hamburger icon on mobile */
     .menu-icon {
-        display: block; 
+        display: block !important; /* Show the icon button */
     }
 
     .nav-links {
-        /* Hide links by default on mobile */
-        display: none; 
+        display: none; /* Hidden by default */
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Appears directly below navbar */
-        left: 0;
-        
-        /* BACKGROUND REMOVED HERE */
-        background: none; 
-        
-        width: 100%;
-        border-radius: 0 0 14px 14px;
-        padding: 10px 0;
-        
-        /* SHADOW REMOVED HERE */
-        box-shadow: none; 
-        
-        z-index: 1000;
-        margin-top: 5px;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #151515;
+        width: 80%;
+        border-radius: 14px;
+        padding: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
-    /* Active class added via JavaScript to show the menu */
     .nav-links.active {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-links a {
-        margin: 5px 0;
-        text-align: left;
-        padding: 12px 25px;
+        text-align: center;
+        padding: 12px;
         width: 100%;
-        box-sizing: border-box;
     }
 }
-
-
-
