@@ -78,7 +78,7 @@ h1 {
 
 .column-center img {
     width: 100%;
-    max-width: 700px;
+    max-width: 1000px;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
@@ -154,4 +154,5 @@ h1 {
         right: 10px;
     }
 }
+
 
