@@ -16,6 +16,11 @@
     z-index: 1001;
 }
 
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
 .navbar a {
     color: #ffffff;
     font-size: 18px;
@@ -30,12 +35,11 @@
     color: #000;
 }
 
-/* Hide the hamburger icon by default (Desktop) */
 .menu-icon {
     display: none;
     color: white;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 35px;
 }
 
 /* ===============================
@@ -43,51 +47,49 @@
    =============================== */
 @media only screen and (max-width: 700px) {
     .navbar {
-        /* Ensure navbar is visible on mobile */
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        height: auto !important;
-        margin: 20px auto !important;
         
-        /* Align icon to the left */
-        justify-content: flex-start; 
-        width: 90%;
+        /* Transparent background */
+        background: transparent !important;
+        box-shadow: none !important;
+        
+        /* Push icon to the right */
+        justify-content: flex-end !important; 
+        width: 100%;
         padding: 10px 20px;
+        margin: 10px 0 !important;
     }
 
-    /* Show hamburger icon on mobile */
     .menu-icon {
-        display: blue; 
+        display: block !important;
     }
 
     .nav-links {
-        /* Hide links by default on mobile */
         display: none; 
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Appears directly below navbar */
-        left: 0;
-        background: #151515;
-        width: 100%;
-        border-radius: 0 0 14px 14px;
+        top: 60px;
+        right: 20px;
+        
+        /* Optional: background only for the dropdown links */
+        background: rgba(21, 21, 21, 0.95); 
+        width: 200px;
+        border-radius: 10px;
         padding: 10px 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         z-index: 1000;
-        margin-top: 5px;
     }
 
-    /* Active class added via JavaScript to show the menu */
     .nav-links.active {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-links a {
-        margin: 5px 0;
-        text-align: left;
-        padding: 12px 25px;
+        margin: 0;
+        text-align: right;
+        padding: 12px 20px;
         width: 100%;
-        box-sizing: border-box;
+        border-radius: 0;
     }
 }
-
