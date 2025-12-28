@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Richards Grava</title>
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  
   <link rel="stylesheet" href="navigation.css" />
   <link rel="stylesheet" href="visual.css" />
   <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
@@ -17,38 +19,13 @@
       background-color: #121212;
       color: #e3e3e3;
     }
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      font-size: 30px;
-      color: #e3e3e3;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      background: #1f1f1f;
-      padding: 10px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 10px;
-      font-size: 18px;
-    }
-    nav a:hover {
-      color: #00bcd4;
-    }
 
-    /* Poga stūrī, kas izskatās pēc pogas, bet ir saite */
+    /* Tulkošanas poga stūrī */
     .translate-link {
       position: fixed;
       top: 20px;
       right: 20px;
-      z-index: 1000;
+      z-index: 2000; /* Augstāks par navigāciju */
       padding: 10px 15px;
       background-color: #00bcd4;
       color: white !important;
@@ -58,6 +35,7 @@
       box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
       transition: 0.3s;
     }
+
     .translate-link:hover {
       background-color: #008c9e;
       transform: scale(1.05);
@@ -67,11 +45,13 @@
       margin-top: 60px;
       font-size: 40px;
     }
+
     .min {
       font-size: 20px;
       color: #bbb;
       margin-bottom: 20px;
     }
+
     .three-column {
       display: flex;
       justify-content: center;
@@ -80,16 +60,24 @@
       gap: 20px;
       padding: 20px;
     }
+
     .three-column img {
       max-width: 400px;
       width: 100%;
       height: auto;
       border-radius: 10px;
     }
-    @media (max-width: 600px) {
+
+    /* Mobilie labojumi tulkošanas pogai un tekstam */
+    @media (max-width: 700px) {
       h1 { font-size: 28px; }
-      nav a { font-size: 16px; margin: 5px; }
-      .translate-link { top: 10px; right: 10px; padding: 8px 12px; font-size: 12px; }
+      .translate-link { 
+        top: auto; 
+        bottom: 20px; /* Pārvietojam uz apakšu mobilajā versijā, lai netraucē menu */
+        right: 20px;
+        font-size: 14px;
+        padding: 8px 12px;
+      }
       .three-column img { max-width: 90%; }
     }
   </style>
@@ -104,11 +92,17 @@
   </a>
 
   <nav class="navbar">
-    <a href="#">Home</a>
-    <a href="about/about.html">About Me</a>
-    <a href="news/news.html">News</a>
-    <a href="portfolio/portfolio.html">Portfolio</a>
-    <a href="conntact/conntact.html">Contact</a>
+    <span class="material-symbols-outlined menu-toggle" onclick="toggleMenu()" style="cursor: pointer; color: white;">
+      menu
+    </span>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="about/about.html">About Me</a>
+      <a href="news/news.html">News</a>
+      <a href="portfolio/portfolio.html">Portfolio</a>
+      <a href="conntact/conntact.html">Contact</a>
+    </div>
   </nav>
 
   <div class="three-column">
@@ -123,6 +117,27 @@
         <img src="ph.webp" alt="Photography image">
     </div>
   </div>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      // Pārslēdz klasi 'active', kas ir definēta tavā navigation.css
+      navLinks.classList.toggle("active");
+    }
+
+    // Aizvērt izvēlni, ja uzspiež ārpus tās
+    window.onclick = function(event) {
+      if (!event.target.matches('.menu-toggle')) {
+        var dropdowns = document.getElementsByClassName("nav-links");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('active')) {
+            openDropdown.classList.remove('active');
+          }
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>
