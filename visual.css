@@ -3,11 +3,33 @@
    =============================== */
 
 body {
-    background: #2c3e50;
-    font-family: 'Roboto Mono', monospace;
-    color: white;
+    background: #121212; /* Tumšāks fons, kas saskan ar navigation.css */
+    font-family: Arial, sans-serif;
+    color: #e3e3e3;
     margin: 0;
     padding: 0;
+    text-align: center;
+}
+
+/* Tulkošanas pogas stils un novietojums */
+.translate-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #00bcd4;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.translate-link:hover {
+    background-color: #008c9e;
+    transform: scale(1.05);
 }
 
 /* Links */
@@ -27,173 +49,69 @@ a:hover {
 
 h1 {
     font-size: 40px;
-    margin: 40px 0 10px 0;
-    text-align: left;
+    margin: 60px 0 10px 0;
 }
 
-.mintxt, .mintxt2 {
+.min {
     font-size: 20px;
-    color: #ccc;
-    margin-top: 10px;
-}
-
-.txt, .txt2 {
-    font-size: 23px;
-    margin-top: 10px;
+    color: #bbb;
+    margin-bottom: 20px;
 }
 
 /* ===============================
-   IMAGES (ROUND OPTION)
-   =============================== */
-
-.circular--square {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-    margin: 40px auto;
-}
-
-/* ===============================
-   3-COLUMN DESKTOP LAYOUT
+   3-COLUMN LAYOUT
    =============================== */
 
 .three-column {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 40px;
     max-width: 1400px;
-    margin: 60px auto;
+    margin: 40px auto;
     padding: 20px;
 }
 
-.column-left,
-.column-center,
-.column-right {
-    width: 30%;
-}
-
 .column-left {
-    font-size: 20px;
-    line-height: 1.6;
+    flex: 1;
+    min-width: 300px;
 }
 
 .column-center img,
 .column-right img {
     width: 100%;
-    max-width: 380px;
-    border-radius: 20px;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
     object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 /* ===============================
-   DESKTOP-CONTAINER
+   RESPONSIVE FIXES
    =============================== */
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding-top: 100px;
-}
-
-/* ===============================
-   RESPONSIVE – LARGE TABLET
-   =============================== */
-
-@media (max-width: 900px) {
-    .three-column {
-        flex-direction: column;
-        text-align: center;
+@media (max-width: 700px) {
+    h1 {
+        font-size: 28px;
+        margin-top: 80px; /* Atstarpe no tulkošanas pogas mobilajā */
     }
 
-    .column-left,
-    .column-center,
-    .column-right {
-        width: 100%;
+    .three-column {
+        flex-direction: column;
+        gap: 20px;
     }
 
     .column-center img,
     .column-right img {
         max-width: 90%;
-        margin: 0 auto;
     }
 
-    h1 {
-        text-align: center;
+    .translate-link {
+        padding: 8px 12px;
+        font-size: 14px;
+        top: 10px;
+        right: 10px;
     }
-}
-
-/* ===========================================
-   FULL MOBILE RESPONSIVE FIX
-   =========================================== */
-
-@media (max-width: 750px) {
-
-  body {
-    padding: 20px;
-    text-align: center !important;
-  }
-
-  h1, h2, h3, p,
-  .txt, .txt2, .mintxt, .mintxt2,
-  .tasks, .newst1, .title, .study,
-  .atext, .about1, .about2, .abouth1, .abouth2 {
-    position: static !important;
-    margin: 20px auto !important;
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-    width: 100% !important;
-    text-align: center !important;
-    font-size: clamp(16px, 5vw, 26px) !important;
-  }
-
-  /* Bildes – pilns platums mobilajam */
-  img, iframe,
-  .circular--square,
-  .bandit, .seb {
-    position: static !important;
-    width: 100% !important;
-    height: auto !important;
-    margin: 20px 0 !important;
-  }
-
-  /* Pogu un box elementu normalizācija */
-  .btn, .btn-one, .btn-two,
-  .box-1, .box-2 {
-    position: static !important;
-    width: 100% !important;
-    max-width: 350px !important;
-    margin: 20px auto !important;
-  }
-
-  /* Slēpjam desktop līnijas */
-  .vl, .hl, .hl2 {
-    display: none !important;
-  }
-
-  /* MOBILĀ NAVIGĀCIJA */
-  nav, .navbar {
-    width: 100% !important;
-    height: auto !important;
-    padding: 10px 0 !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 10px !important;
-  }
-
-  nav a, .navbar a {
-    font-size: 14px !important;
-    padding: 8px 12px !important;
-    width: auto !important;
-  }
-
-  /* Navigation animation OFF */
-  nav .animation {
-    display: none !important;
-  }
-
 }
