@@ -1,5 +1,6 @@
-/* Clean Rounded Navigation Bar */
-
+/* ===============================
+   DESKTOP VERSION
+   =============================== */
 .navbar {
     margin: 20px auto;
     padding: 10px 25px;
@@ -11,6 +12,13 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 20px rgba(0,0,0,0.35);
+    position: relative;
+    z-index: 1001;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
 }
 
 .navbar a {
@@ -27,16 +35,61 @@
     color: #000;
 }
 
-/* Mobile */
-@media (max-width: 700px) {
+.menu-icon {
+    display: none;
+    color: white;
+    cursor: pointer;
+    font-size: 35px;
+    user-select: none;
+}
+
+/* ===============================
+   MOBILE VERSION (Below 700px)
+   =============================== */
+@media only screen and (max-width: 700px) {
     .navbar {
-        flex-wrap: wrap;
-        gap: 15px;
-        padding: 10px 15px;
+        display: flex !important;
+        background: none !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        
+        width: 100% !important;
+        padding: 15px 20px !important;
+        margin: 0 !important;
+        justify-content: flex-start !important; 
     }
 
-    .navbar a {
-        font-size: 16px;
-        padding: 8px 14px;
+    .menu-icon {
+        display: block !important;
+        color: #ffffff !important;
+    }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 20px;
+        
+        background: rgba(21, 21, 21, 0.98) !important; 
+        width: 220px;
+        border-radius: 12px;
+        padding: 10px 0;
+        z-index: 1000;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .nav-links a {
+        margin: 0 !important;
+        text-align: left !important;
+        padding: 15px 25px !important;
+        width: 100% !important;
+        font-size: 18px !important;
+        border-radius: 0 !important;
     }
 }
