@@ -10,7 +10,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
 
   <style>
-  
+    /* Esošie stili */
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       font-size: 30px;
@@ -44,49 +44,67 @@
       color: #00bcd4;
     }
 
-    /* JAUNS STILS TULKOTĀJA POGAI */
-/* JAUNS STILS: Poga stūrī */
-#google_translate_element {
-  position: fixed;   /* Poga paliek savā vietā pat ritinot lapu */
-  top: 10px;         /* Attālums no augšas */
-  right: 10px;       /* Attālums no labās malas */
-  z-index: 1000;     /* Lai poga vienmēr būtu pa virsu citiem elementiem */
-  background: rgba(31, 31, 31, 0.8); /* Puscaurspīdīgs fons, lai labāk iederas */
-  padding: 5px;
-  border-radius: 5px;
-}
+    /* JAUNS STILS: TULKOŠANAS POGA STŪRĪ */
+    #translate-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      padding: 10px 15px;
+      background-color: #00bcd4; /* Tava zilā krāsa */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    #translate-btn:hover {
+      background-color: #008c9e;
+      transform: scale(1.05);
+    }
+
+    /* Paslēpjam oriģinālo Google elementu, lai tas nerēgojas */
+    #google_translate_element {
+      display: none;
+    }
 
     h1 {
       margin-top: 60px;
       font-size: 40px;
     }
-    .dh {
+    .min {
       font-size: 20px;
       color: #bbb;
       margin-bottom: 20px;
     }
-    .images {
+    .three-column {
       display: flex;
       justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 15px;
-      padding: 10px;
+      gap: 20px;
+      padding: 20px;
     }
-    .images img {
-      max-width: 45%;
+    .three-column img {
+      max-width: 100%;
       height: auto;
       border-radius: 10px;
     }
+    
     @media (max-width: 600px) {
       h1 { font-size: 28px; }
-      .dh { font-size: 16px; }
       nav a { font-size: 16px; margin: 5px; }
-      .images img { max-width: 90%; }
-      .material-symbols-outlined { font-size: 26px; top: 15px; right: 15px; }
+      #translate-btn { top: 10px; right: 10px; padding: 8px 12px; font-size: 12px; }
     }
   </style>
 </head>
 <body>
+
+  <button id="translate-btn" onclick="openTranslate()">Translate / Tulkot</button>
+  <div id="google_translate_element"></div>
 
   <nav class="navbar">
     <a href="#">Home</a>
@@ -96,8 +114,6 @@
     <a href="conntact/conntact.html">Contact</a>
     <div class="animation start-home"></div>
   </nav>
-
-  <div id="google_translate_element"></div>
 
   <div class="three-column">
     <div class="column-left">
@@ -117,13 +133,21 @@
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
-        pageLanguage: 'en', // Norādi, ka tavs saturs oriģināli ir angliski
+        pageLanguage: 'en', 
+        includedLanguages: 'lv,en',
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
+    }
+
+    // Funkcija, kas "atver" tulkotāju
+    function openTranslate() {
+      var googleDiv = document.getElementById('google_translate_element');
+      googleDiv.style.display = 'block'; // Parāda izvēlni
+      // Pievienojam paziņojumu lietotājam, ja nepieciešams
+      console.log("Google Translate aktivizēts.");
     }
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
-
