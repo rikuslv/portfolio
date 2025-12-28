@@ -83,12 +83,10 @@ h1 {
 
 /* Default image styling for all devices */
 .column-center img {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+position: absolute;
+    right: -16%;
+    top: 52%;
+    transform: translateY(7%);
 }
 
 /* ==============================================
@@ -97,18 +95,18 @@ h1 {
 @media (min-width: 1024px) {
     /* Apply absolute positioning ONLY on PC */
     h1 {
-        font-size: 40px;
-        position: absolute;
-        top: 50%;
-        right: 45%;
-        margin: 0;
+    font-size: 43px;
+    position: absolute;
+    top: 62%;
+    right: 58%;
+    margin: 0;
     }
 
     .min {
-        font-size: 30px;
-        position: absolute;
-        right: 60%;
-        top: 80%;
+    font-size: 33px;
+    position: absolute;
+    right: 62%;
+    top: 74%;
     }
 
     .column-center img {
@@ -187,3 +185,4 @@ h1 {
         right: 10px;
     }
 }
+
