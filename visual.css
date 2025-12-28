@@ -91,15 +91,15 @@ h1 {
 
 @media (min-width: 1024px) {
     body {
-        /* Ieliekam Target/Scanner GIF kreisajā pusē */
         background-image: url('https://i.pinimg.com/originals/82/8e/f1/828ef1f45c33f05b8329dd93fffb89d5.gif');
         background-repeat: no-repeat;
         background-position: left 5% center;
-        background-size: 300px; /* Vari mainīt izmēru šeit */
+        background-size: 300px;
         background-attachment: fixed;
+       
+        background-blend-mode: screen;
     }
 
-    /* Pievienojam Wi-Fi/Signāla animāciju labajā pusē */
     body::after {
         content: "";
         position: fixed;
@@ -111,7 +111,9 @@ h1 {
         background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueXF3eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9iZCZjdD1n/3o7TKMGpxxSGCYMBmU/giphy.gif');
         background-size: contain;
         background-repeat: no-repeat;
-        opacity: 0.15; 
+        mix-blend-mode: screen;
+        
+        opacity: 0.2;
         z-index: -1;
     }
 }
@@ -142,3 +144,4 @@ h1 {
         right: 10px;
     }
 }
+
