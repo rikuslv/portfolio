@@ -1,6 +1,8 @@
-/* Simple rounded navbar — does NOT affect page layout */
+/* ===============================
+   DESKTOP VERSION
+   =============================== */
 .navbar {
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 10px 25px;
     width: fit-content;
     background: #151515;
@@ -10,6 +12,8 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 20px rgba(0,0,0,0.35);
+    position: relative;
+    z-index: 1001;
 }
 
 .navbar a {
@@ -26,16 +30,63 @@
     color: #000;
 }
 
-/* Mobile */
-@media (max-width: 700px) {
+/* Hide the hamburger icon by default (Desktop) */
+.menu-icon {
+    display: none;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/* ===============================
+   MOBILE VERSION (Screens below 700px)
+   =============================== */
+@media only screen and (max-width: 700px) {
     .navbar {
-        flex-wrap: wrap;
-        gap: 15px;
-        padding: 10px 15px;
+        /* Ensure navbar is visible on mobile */
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        margin: 20px auto !important;
+        
+        /* Align icon to the left */
+        justify-content: flex-start; 
+        width: 90%;
+        padding: 10px 20px;
     }
 
-    .navbar a {
-        font-size: 16px;
-        padding: 8px 14px;
+    /* Show hamburger icon on mobile */
+    .menu-icon {
+        display: block; 
+    }
+
+    .nav-links {
+        /* Hide links by default on mobile */
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Appears directly below navbar */
+        left: 0;
+        background: #151515;
+        width: 100%;
+        border-radius: 0 0 14px 14px;
+        padding: 10px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        z-index: 1000;
+        margin-top: 5px;
+    }
+
+    /* Active class added via JavaScript to show the menu */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 5px 0;
+        text-align: left;
+        padding: 12px 25px;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
