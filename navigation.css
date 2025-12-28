@@ -1,3 +1,6 @@
+/* ===============================
+   DATORA VERSIJA (Desktop)
+   =============================== */
 .navbar {
     margin: 30px auto;
     padding: 10px 25px;
@@ -9,6 +12,8 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 20px rgba(0,0,0,0.35);
+    position: relative;
+    z-index: 1001;
 }
 
 .navbar a {
@@ -24,6 +29,8 @@
     background: #1abc9c;
     color: #000;
 }
+
+/* Sākumā paslēpjam ikonu (datora versijā) */
 .menu-icon {
     display: none;
     color: white;
@@ -31,22 +38,19 @@
     font-size: 30px;
 }
 
-@media only screen and (max-width: 700px) {
-    nav.navbar, 
-    .navbar {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        height: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-}
-
-
+/* ===============================
+   MOBILĀ VERSIJA (Telefoniem)
+   =============================== */
 @media only screen and (max-width: 700px) {
     .navbar {
-        justify-content: space-between;
+        /* Iespējojam joslu mobilajā skatā */
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        margin: 20px auto !important;
+        
+        justify-content: flex-start; /* Poga būs kreisajā pusē */
         width: 90%;
         padding: 10px 20px;
     }
@@ -59,24 +63,27 @@
         display: none; /* Sākumā paslēpjam sarakstu */
         flex-direction: column;
         position: absolute;
-        top: 70px;
-        left: 50%;
-        transform: translateX(-50%);
+        top: 100%; /* Sākas tieši zem navbar */
+        left: 0;
         background: #151515;
-        width: 80%;
-        border-radius: 14px;
-        padding: 20px;
+        width: 100%;
+        border-radius: 0 0 14px 14px;
+        padding: 10px 0;
         box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         z-index: 1000;
+        margin-top: 5px;
     }
 
-    /* Klase, kuru pievienosim ar JS, lai atvērtu menu */
+    /* Kad nospiež pogu, JS pievieno šo klasi */
     .nav-links.active {
         display: flex;
     }
 
     .nav-links a {
-        margin: 10px 0;
-        text-align: center;
+        margin: 5px 0;
+        text-align: left;
+        padding: 12px 25px;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
