@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google" content="notranslate">
   <title>Richards Grava</title>
 
   <link rel="stylesheet" href="navigation.css" />
@@ -10,7 +11,14 @@
   <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
 
   <style>
-    /* Esošie stili */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #121212;
+      color: #e3e3e3;
+      top: 0 !important;
+    }
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       font-size: 30px;
@@ -18,13 +26,6 @@
       position: absolute;
       top: 20px;
       right: 20px;
-    }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #121212;
-      color: #e3e3e3;
     }
     nav {
       display: flex;
@@ -43,34 +44,34 @@
     nav a:hover {
       color: #00bcd4;
     }
-
-    /* JAUNS STILS: TULKOŠANAS POGA STŪRĪ */
     #translate-btn {
       position: fixed;
       top: 20px;
       right: 20px;
       z-index: 1000;
       padding: 10px 15px;
-      background-color: #00bcd4; /* Tava zilā krāsa */
+      background-color: #00bcd4;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
       transition: 0.3s;
     }
-
     #translate-btn:hover {
       background-color: #008c9e;
       transform: scale(1.05);
     }
-
-    /* Paslēpjam oriģinālo Google elementu, lai tas nerēgojas */
-    #google_translate_element {
-      display: none;
+    #google_translate_element, .goog-te-banner-frame, .goog-te-gadget-icon {
+      display: none !important;
     }
-
+    .goog-te-menu-value img {
+      display: none !important;
+    }
+    iframe.goog-te-banner-frame {
+      display: none !important;
+    }
     h1 {
       margin-top: 60px;
       font-size: 40px;
@@ -89,15 +90,16 @@
       padding: 20px;
     }
     .three-column img {
-      max-width: 100%;
+      max-width: 400px;
+      width: 100%;
       height: auto;
       border-radius: 10px;
     }
-    
     @media (max-width: 600px) {
       h1 { font-size: 28px; }
       nav a { font-size: 16px; margin: 5px; }
       #translate-btn { top: 10px; right: 10px; padding: 8px 12px; font-size: 12px; }
+      .three-column img { max-width: 90%; }
     }
   </style>
 </head>
@@ -112,7 +114,6 @@
     <a href="news/news.html">News</a>
     <a href="portfolio/portfolio.html">Portfolio</a>
     <a href="conntact/conntact.html">Contact</a>
-    <div class="animation start-home"></div>
   </nav>
 
   <div class="three-column">
@@ -120,11 +121,9 @@
         <h1>Richards Grava</h1>
         <div class="min">Cybersecurity | Photographer</div>
     </div>
-
     <div class="column-center">
         <img src="prg.webp" alt="Programming image">
     </div>
-
     <div class="column-right">
         <img src="ph.webp" alt="Photography image">
     </div>
@@ -135,16 +134,19 @@
       new google.translate.TranslateElement({
         pageLanguage: 'en', 
         includedLanguages: 'lv,en',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
       }, 'google_translate_element');
     }
 
-    // Funkcija, kas "atver" tulkotāju
     function openTranslate() {
-      var googleDiv = document.getElementById('google_translate_element');
-      googleDiv.style.display = 'block'; // Parāda izvēlni
-      // Pievienojam paziņojumu lietotājam, ja nepieciešams
-      console.log("Google Translate aktivizēts.");
+      var googleCombo = document.querySelector('.goog-te-combo');
+      if (googleCombo) {
+          document.getElementById('google_translate_element').style.display = 'block';
+          alert("Lūdzu, izvēlieties valodu sarakstā!");
+      } else {
+          alert("Tulkotājs lādējas...");
+      }
     }
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
