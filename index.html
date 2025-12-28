@@ -45,11 +45,16 @@
     }
 
     /* JAUNS STILS TULKOTĀJA POGAI */
-    #google_translate_element {
-      padding: 10px;
-      background: #1f1f1f;
-      border-top: 1px solid #333;
-    }
+/* JAUNS STILS: Poga stūrī */
+#google_translate_element {
+  position: fixed;   /* Poga paliek savā vietā pat ritinot lapu */
+  top: 10px;         /* Attālums no augšas */
+  right: 10px;       /* Attālums no labās malas */
+  z-index: 1000;     /* Lai poga vienmēr būtu pa virsu citiem elementiem */
+  background: rgba(31, 31, 31, 0.8); /* Puscaurspīdīgs fons, lai labāk iederas */
+  padding: 5px;
+  border-radius: 5px;
+}
 
     h1 {
       margin-top: 60px;
@@ -121,3 +126,4 @@
 
 </body>
 </html>
+
