@@ -58,7 +58,7 @@
 
     /* Show hamburger icon on mobile */
     .menu-icon {
-        display: block; 
+        display: blue; 
     }
 
     .nav-links {
@@ -90,3 +90,4 @@
         box-sizing: border-box;
     }
 }
+
