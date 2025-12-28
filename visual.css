@@ -14,7 +14,7 @@ body {
 /* Translate link styling */
 .translate-link {
     position: absolute;
-    top: 20px;
+    top: 40px;
     right: 20px;
     padding: 10px 15px;
     background-color: #00bcd4;
@@ -156,6 +156,7 @@ h1 {
         right: 10px;
     }
 }
+
 
 
 
