@@ -49,32 +49,40 @@
 @media only screen and (max-width: 700px) {
     .navbar {
         display: flex !important;
-        background: transparent !important;
+        background: none !important;
         background-color: transparent !important;
         box-shadow: none !important;
         border: none !important;
+        outline: none !important;
         
-        width: 100%;
-        padding: 15px 20px;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 15px 20px !important;
         margin: 0 !important;
+        position: relative !important;
         
-        /* Hamburger to the LEFT */
         justify-content: flex-start !important; 
     }
 
     .menu-icon {
         display: block !important;
         color: #ffffff !important;
+        font-size: 35px !important;
+        cursor: pointer !important;
+        z-index: 1002 !important;
     }
 
     .nav-links {
+
         display: none; 
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 100%; 
         left: 20px;
         
-        background: rgba(21, 21, 21, 0.98); 
+    
+        background: rgba(21, 21, 21, 0.98) !important; 
         width: 220px;
         border-radius: 12px;
         padding: 10px 0;
@@ -82,16 +90,20 @@
         box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
+   
     .nav-links.active {
         display: flex !important;
     }
 
     .nav-links a {
-        margin: 0;
-        text-align: left;
-        padding: 15px 25px;
-        width: 100%;
-        font-size: 18px;
-        border-radius: 0;
+        margin: 0 !important;
+        text-align: left !important;
+        padding: 15px 25px !important;
+        width: 100% !important;
+        font-size: 18px !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        color: #ffffff !important;
+        display: block !important;
     }
 }
