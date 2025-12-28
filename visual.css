@@ -86,7 +86,7 @@ h1 {
 }
 
 /* ==============================================
-   PC ONLY ANIMATIONS (Desktop only)
+   PC ONLY DECORATIONS (Desktop only)
    ============================================== */
 
 @media (min-width: 1024px) {
@@ -102,28 +102,26 @@ h1 {
         background-image: url('https://i.pinimg.com/originals/82/8e/f1/828ef1f45c33f05b8329dd93fffb89d5.gif');
         background-size: contain;
         background-repeat: no-repeat;
-        /* blend-mode screen removes the black background from the GIF */
+        /* blend-mode screen removes the black background */
         mix-blend-mode: screen; 
         z-index: -1;
         pointer-events: none;
+        opacity: 0.6; /* Adjust visibility here */
     }
 
-    /* Cyber-grid/Data stream animation at the bottom */
+    /* Subtle decorative line at the bottom instead of the animation */
     body::after {
         content: "";
         position: fixed;
         bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 120px;
-        /* Using a clean digital wave/data line animation */
-        background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueG56Znd4ZzJueG56Znd4ZzJueG56Znd4ZzJueG56Znd4ZzJueG56JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/QUY6clS66AF4S9LOKG/giphy.gif');
-        background-size: cover;
-        background-position: center;
-        opacity: 0.1; /* Subtle visibility to fill the void */
-        mix-blend-mode: screen;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #1abc9c, transparent);
+        box-shadow: 0 0 15px #1abc9c;
+        opacity: 0.3;
         z-index: -1;
-        pointer-events: none;
     }
 }
 
@@ -131,10 +129,11 @@ h1 {
    RESPONSIVE FIXES
    =============================== */
 
-/* Hide decorations on tablets and mobile */
+/* Completely disable pseudo-elements on mobile/tablet */
 @media (max-width: 1023px) {
     body::before, body::after {
         display: none !important;
+        content: none !important;
     }
 }
 
