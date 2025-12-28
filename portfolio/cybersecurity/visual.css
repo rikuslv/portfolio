@@ -18,8 +18,7 @@ h1 {
   height: 6000px;
   position: absolute;
   left: 13.5%;
-  top: -35%;   /* var būt arī 0% */
-  transform: none; /* ← Izmet ārā */
+  top: -35%;   
 }
 
 /* Horizontal line */
@@ -28,8 +27,7 @@ h1 {
   width: 400px;
   position: absolute;
   top: -10%;
-  left: -7%;
-  transform: none; /* ← Izmet ārā */
+  left: -1%;
 }
 
 .tasks {
@@ -215,6 +213,7 @@ a {
 }
 
 }
+
 
 
 
