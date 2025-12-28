@@ -1,7 +1,4 @@
-/* ===========================
-   CLEAN ROUNDED NAVIGATION BAR
-   =========================== */
-
+/* Pamata stili navigācijas joslai */
 .navbar {
     margin: 30px auto;
     padding: 10px 25px;
@@ -9,13 +6,18 @@
     background: #151515;
     border-radius: 14px;
     display: flex;
-    gap: 25px;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 20px rgba(0,0,0,0.35);
+    position: relative;
+    z-index: 1001;
 }
 
-/* Links */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
 .navbar a {
     color: #ffffff;
     font-size: 18px;
@@ -25,26 +27,53 @@
     transition: 0.25s ease;
 }
 
-/* Hover effect */
 .navbar a:hover {
     background: #1abc9c;
     color: #000;
 }
 
-/* Active animation block (subtle highlight) */
-.animation {
-    display: none; /* Tu to nelieto — izslēdzu */
+/* Paslēpjam menu pogu datora versijā */
+.menu-toggle {
+    display: none !important;
 }
 
-/* Mobile */
+/* MOBILĀ VERSIJA */
 @media (max-width: 700px) {
     .navbar {
-        gap: 15px;
+        width: 90%;
+        justify-content: flex-start !important; /* Poga būs kreisajā pusē */
         padding: 10px 15px;
     }
 
+    .menu-toggle {
+        display: block !important;
+        color: white;
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+    .nav-links {
+        display: none; /* Saites sākumā ir paslēptas */
+        flex-direction: column;
+        position: absolute;
+        top: 110%;
+        left: 0;
+        width: 100%;
+        background: #151515;
+        border-radius: 14px;
+        padding: 15px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    /* Klase, ko aktivizē JavaScript */
+    .nav-links.active {
+        display: flex !important;
+    }
+
     .navbar a {
-        font-size: 16px;
-        padding: 8px 14px;
+        width: 100%;
+        text-align: left;
+        padding: 12px 25px;
+        border-radius: 0;
     }
 }
