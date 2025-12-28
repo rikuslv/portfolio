@@ -1,32 +1,50 @@
+<!doctype html>
+<html lang="lv">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<head>
-<link rel="stylesheet" href="navigation.css">
-<link rel="stylesheet" href="visual.css">
-<link rel="shortcut icon" type="image/x-icon" href="logo.png">
-</head>
-<title>About me</title>
-<body>
-<nav class="navbar">
-  <a href="../index.html">Home</a>
-  <a href="../about/about.html">About Me</a>
-  <a href="../news/news.html">News</a>
-  <a href="../portfolio/portfolio.html">Portfolio</a>
-  <a href="../conntact/conntact.html">Contact</a>
-</nav>
-<h1>About me</h1>
-<img class="circular--square" src="me.jpeg">
-<p class="mintxt">Cybersecurity</p>
-<p class="txt">Hello, my name is Richards Grava. I study cybersecurity at Saldus Technical School, where I have spent the past three years developing<br> my skills in this field. During my studies, I participated in the 2025 European Cybersecurity Challenge, successfully passing<br> the first round, and competed in the KiberPlēsis CTF, where I earned 360 points."<a href="https://kiberplesis.lv/">kiberplēsis</a>" where i have 360 points.</p>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About me</title>
 
-<p class="mintxt2">Photographer</p>
-<p class="txt2">I'm a beginner in photography, but I think the pictures come out well for me.<br>You can check them out on my <a href="https://www.instagram.com/rik_gra/">Instagram</a>.</p>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  
+  <link rel="stylesheet" href="../navigation.css" />
+  <link rel="stylesheet" href="../visual.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../logo.png" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
+    
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="../news/news.html">News</a>
+      <a href="../portfolio/portfolio.html">Portfolio</a>
+      <a href="../conntact/conntact.html">Contact</a>
+    </div>
+  </nav>
+
+  <h1>About me</h1>
+  <img class="circular--square" src="me.jpeg">
+  
+  <p class="mintxt">Cybersecurity</p>
+  <p class="txt">
+    Hello, my name is Richards Grava. I study cybersecurity at Saldus Technical School, where I have spent the past three years developing my skills in this field. During my studies, I participated in the 2025 European Cybersecurity Challenge, successfully passing the first round, and competed in the <a href="https://kiberplesis.lv/">KiberPlēsis</a> CTF, where I earned 360 points.
+  </p>
+
+  <p class="mintxt2">Photographer</p>
+  <p class="txt2">
+    I'm a beginner in photography, but I think the pictures come out well for me.<br>
+    You can check them out on my <a href="https://www.instagram.com/rik_gra/">Instagram</a>.
+  </p>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>
-
-
-
-
-
