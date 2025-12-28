@@ -24,6 +24,12 @@
     background: #1abc9c;
     color: #000;
 }
+.menu-icon {
+    display: none;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+}
 
 @media only screen and (max-width: 700px) {
     nav.navbar, 
@@ -38,3 +44,39 @@
 }
 
 
+@media only screen and (max-width: 700px) {
+    .navbar {
+        justify-content: space-between;
+        width: 90%;
+        padding: 10px 20px;
+    }
+
+    .menu-icon {
+        display: block; /* Parādām ikonu uz telefona */
+    }
+
+    .nav-links {
+        display: none; /* Sākumā paslēpjam sarakstu */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #151515;
+        width: 80%;
+        border-radius: 14px;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        z-index: 1000;
+    }
+
+    /* Klase, kuru pievienosim ar JS, lai atvērtu menu */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
