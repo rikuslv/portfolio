@@ -106,7 +106,7 @@ h1 {
         content: "";
         position: fixed;
         left: 2%;
-        top: 50%;
+        top: 46%;
         transform: translateY(-50%);
         width: 350px;
         height: 350px;
@@ -165,6 +165,7 @@ h1 {
         right: 10px;
     }
 }
+
 
 
 
