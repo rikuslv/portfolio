@@ -37,7 +37,6 @@
     cursor: pointer;
     font-size: 30px;
 }
-
 /* ===============================
    MOBILE VERSION (Screens below 700px)
    =============================== */
@@ -50,6 +49,10 @@
         height: auto !important;
         margin: 20px auto !important;
         
+        /* Remove background from the main navbar bubble if needed */
+        background: transparent !important; 
+        box-shadow: none !important;
+
         /* Align icon to the left */
         justify-content: flex-start; 
         width: 90%;
@@ -68,11 +71,17 @@
         position: absolute;
         top: 100%; /* Appears directly below navbar */
         left: 0;
-        background: #151515;
+        
+        /* BACKGROUND REMOVED HERE */
+        background: none; 
+        
         width: 100%;
         border-radius: 0 0 14px 14px;
         padding: 10px 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        
+        /* SHADOW REMOVED HERE */
+        box-shadow: none; 
+        
         z-index: 1000;
         margin-top: 5px;
     }
@@ -90,3 +99,4 @@
         box-sizing: border-box;
     }
 }
+
