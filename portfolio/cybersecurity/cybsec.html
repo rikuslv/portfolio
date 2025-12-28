@@ -2,10 +2,12 @@
 <html lang="lv">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cybersecurity</title>
 
-  <link rel="stylesheet" href="navigation.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="navigation.css?v=99">
   <link rel="stylesheet" href="visual.css">
   <link rel="shortcut icon" type="image/x-icon" href="logo.png">
 </head>
@@ -13,23 +15,28 @@
 <body>
 
   <nav class="navbar">
-    <a href="../../index.html">Home</a>
-    <a href="../../about/about.html">About</a>
-    <a href="../../news/news.html">News</a>
-    <a href="../portfolio.html">Portfolio</a>
-    <a href="../../conntact/conntact.html">Contact</a>
+    <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
+
+    <div class="nav-links" id="navLinks">
+      <a href="../../index.html">Home</a>
+      <a href="../../about/about.html">About</a>
+      <a href="../../news/news.html">News</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../../conntact/conntact.html">Contact</a>
+    </div>
   </nav>
 
   <h1>Cybersecurity</h1>
+  
   <div class="tasks">
-  <div class="hl"></div>
-  <h2 class="tasks">Bandit</h2>
-  <div class="hl2"></div>
-  <h2 class="tasks">Practice</h2>
-  <h2 class="tasks">EVILBOX: ONE</h2>
-  <h2 class="tasks">Kinerplēsis</h2>
-  <h2 class="tasks">Jangow: 1.0.1</h2>
-  <div class="vl"></div>
+    <div class="hl"></div>
+    <h2 class="tasks">Bandit</h2>
+    <div class="hl2"></div>
+    <h2 class="tasks">Practice</h2>
+    <h2 class="tasks">EVILBOX: ONE</h2>
+    <h2 class="tasks">Kinerplēsis</h2>
+    <h2 class="tasks">Jangow: 1.0.1</h2>
+    <div class="vl"></div>
   </div>
 
   <h2 class="abouth1">Bandit</h2>
@@ -64,42 +71,29 @@
   <h2 class="abouth3">EVILBOX: ONE</h2>
   <img src="evilbox.png" alt="evilnox" class="evilnox" width="800" height="280"><br>
   <p class="about3">
-   EVILBOX: ONE is a cybersecurity Capture The Flag (CTF) competition platform that offers a variety of challenges<br>
-    designed to test and enhance participants' cybersecurity skills. In this task,
-   the objective is to obtain both the user flag<br>
-   and the root flag, which demonstrate successful access and privilege escalation within the target system.<br>
-   The file included alongside this write-up shows the exact steps and methods used to capture both flags.
+   EVILBOX: ONE is a cybersecurity Capture The Flag (CTF) competition platform...
     (<a href="https://drive.google.com/file/d/1FdqM9bw7eqV5HDgHGl1gEvHjP3TdKfkW/view?usp=sharing" target="_blank">report</a>)
   </p>
 
   <h2 class="abouth4">Kiberplēsis</h2>
-  <img src="kiberplesis.png" alt="evilnox" class="kiberplesis" width="400" height="400"><br><br>
-  <p class="about4">The "<a href="https://kiberplesis.lv/" target="_blank" rel="noopener noreferrer">Kiberplēsis</a>" competition is organized by the Latvian cybersecurity services company<br> CYBER CIRCLE, 
-  giving young people the opportunity to
-  test their knowledge and become heroes<br> of cyberspace by solving challenges in the “Capture the Flag” (CTF) format,
-  one of the<br> most popular types of cybersecurity competitions in the world.<br><br>
+  <img src="kiberplesis.png" alt="kiberplesis" class="kiberplesis" width="400" height="400"><br><br>
+  <p class="about4">The "<a href="https://kiberplesis.lv/" target="_blank" rel="noopener noreferrer">Kiberplēsis</a>" competition...<br><br>
   I achieved 360 points in the Kiberplēsis 2025 CTF competition, placing 80th.</p>
 
   <h2 class="abouth5">Jangow: 1.0.1</h2>
   <img src="jangow.png" alt="jangow" class="jangow" width="800" height="280"><br>
   <p class="about5">
-Description<br><br>
-Difficulty: easy<br>
+    Description<br><br>
+    Difficulty: easy<br>
+    My report <a href="https://drive.google.com/file/d/1P5HtphYRhzz4hIE_xCfwiVQxUQU_p4WC/view?usp=sharing" target="_blank" rel="noopener noreferrer">file</a>
+  </p>
 
-The secret to this box is enumeration! Inquiries jangow2021@gmail.com<br>
-This works better with VirtualBox rather than VMware ## Changelog 2021-11-04 - v1.0.1 2021-11-01 - v1.0.0 <br><br>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("active");
+    }
+  </script>
 
-My report <a href="https://drive.google.com/file/d/1P5HtphYRhzz4hIE_xCfwiVQxUQU_p4WC/view?usp=sharing" target="_blank rel="noopener noreferrer"">file</a></p>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
