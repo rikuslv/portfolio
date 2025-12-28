@@ -42,21 +42,15 @@
    =============================== */
 @media only screen and (max-width: 700px) {
     .navbar {
-        /* Ensure navbar is visible on mobile */
         display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        height: auto !important;
-        margin: 20px auto !important;
+        background: transparent !important; /* Forces background to be transparent */
+        box-shadow: none !important;        /* Removes the shadow */
+        border: none !important;            /* Ensures no borders are visible */
         
-        /* Remove background from the main navbar bubble if needed */
-        background: transparent !important; 
-        box-shadow: none !important;
-
-        /* Align icon to the left */
         justify-content: flex-start; 
         width: 90%;
         padding: 10px 20px;
+        margin: 20px auto !important;
     }
 
     /* Show hamburger icon on mobile */
@@ -99,4 +93,5 @@
         box-sizing: border-box;
     }
 }
+
 
