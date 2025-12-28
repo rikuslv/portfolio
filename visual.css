@@ -1,9 +1,9 @@
-/* ===============================
-   GLOBAL STYLES
-   =============================== */
+/* ==============
+   GLOBAL STYLES 
+   ==============*/
 
 body {
-    background: #121212; /* Tumšāks fons, kas saskan ar navigation.css */
+    background: #121212;
     font-family: Arial, sans-serif;
     color: #e3e3e3;
     margin: 0;
@@ -11,7 +11,6 @@ body {
     text-align: center;
 }
 
-/* Tulkošanas pogas stils un novietojums */
 .translate-link {
     position: absolute;
     top: 20px;
@@ -32,7 +31,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Links */
 a {
     color: white;
     text-decoration: none;
@@ -78,8 +76,7 @@ h1 {
     min-width: 300px;
 }
 
-.column-center img,
-.column-right img {
+.column-center img {
     width: 100%;
     max-width: 400px;
     height: auto;
@@ -88,14 +85,45 @@ h1 {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
+/* ==============================================
+   JAUNUMS: PC ONLY ANIMATIONS 
+   ============================================== */
+
+@media (min-width: 1024px) {
+    body {
+        /* Ieliekam Target/Scanner GIF kreisajā pusē */
+        background-image: url('https://i.pinimg.com/originals/82/8e/f1/828ef1f45c33f05b8329dd93fffb89d5.gif');
+        background-repeat: no-repeat;
+        background-position: left 5% center;
+        background-size: 300px; /* Vari mainīt izmēru šeit */
+        background-attachment: fixed;
+    }
+
+    /* Pievienojam Wi-Fi/Signāla animāciju labajā pusē */
+    body::after {
+        content: "";
+        position: fixed;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 200px;
+        height: 200px;
+        background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueXF3eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9iZCZjdD1n/3o7TKMGpxxSGCYMBmU/giphy.gif');
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.15; 
+        z-index: -1;
+    }
+}
+
 /* ===============================
-   RESPONSIVE FIXES
+   RESPONSIVE FIXES 
    =============================== */
 
 @media (max-width: 700px) {
     h1 {
         font-size: 28px;
-        margin-top: 80px; /* Atstarpe no tulkošanas pogas mobilajā */
+        margin-top: 80px;
     }
 
     .three-column {
@@ -103,8 +131,7 @@ h1 {
         gap: 20px;
     }
 
-    .column-center img,
-    .column-right img {
+    .column-center img {
         max-width: 90%;
     }
 
