@@ -2,10 +2,12 @@
 <html lang="lv">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
 
-  <link rel="stylesheet" href="navigation.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <link rel="stylesheet" href="navigation.css?v=99">
   <link rel="stylesheet" href="visual.css">
   <link rel="shortcut icon" type="image/x-icon" href="logo.png">
 </head>
@@ -13,24 +15,28 @@
 <body>
 
   <nav class="navbar">
-    <a href="../index.html">Home</a>
-    <a href="../about/about.html">About</a>
-    <a href="../news/news.html">News</a>
-    <a href="../portfolio/portfolio.html">Portfolio</a>
-    <a href="#">Contact</a>
+    <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
+
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html">Home</a>
+      <a href="../about/about.html">About</a>
+      <a href="../news/news.html">News</a>
+      <a href="../portfolio/portfolio.html">Portfolio</a>
+      <a href="#">Contact</a>
+    </div>
   </nav>
 
   <h1 class="atext">How to contact me?</h1>
 
   <p class="txt">
     To contact me, you can write me by email:<br>
-    richards.grava@gmail.com
+    <strong>richards.grava@gmail.com</strong>
   </p>
 
   <h2 class="study">I study here:</h2>
 
   <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15181.958806788074!2d22.49963649972204!3d56.66454117688948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ef9866374d12b7%3A0xbb18273c4e1fffb2!2sSaldus%20Tehnikums!5e0!3m2!1slv!2slv!4v1741974929542!5m2!1slv!2slv" 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2199.160105822394!2d22.48425261601614!3d56.63660398083863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ef3205096a1a47%3A0xc3f8372691456d35!2sSaldus%20Tehnikums!5e0!3m2!1slv!2slv!4v1690000000000!5m2!1slv!2slv" 
     width="600" 
     height="450" 
     style="border:0;" 
@@ -38,6 +44,13 @@
     loading="lazy" 
     referrerpolicy="no-referrer-when-downgrade">
   </iframe>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>
