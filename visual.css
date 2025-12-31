@@ -111,9 +111,9 @@ position: absolute;
 
     .column-center img {
         position: absolute;
-        right: 3%;
-        top: 50%;
-        transform: translateY(-50%);
+        right: 2%;
+        top: 70%;
+        transform: translateY(30%);
     }
 
     /* Main Target/Scanner animation */
@@ -185,4 +185,5 @@ position: absolute;
         right: 10px;
     }
 }
+
 
