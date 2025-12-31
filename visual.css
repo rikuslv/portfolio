@@ -97,7 +97,7 @@ position: absolute;
     h1 {
     font-size: 43px;
     position: absolute;
-    top: 62%;
+    top: 52%;
     right: 58%;
     margin: 0;
     }
@@ -106,7 +106,7 @@ position: absolute;
     font-size: 33px;
     position: absolute;
     right: 62%;
-    top: 74%;
+    top: 64%;
     }
 
     .column-center img {
@@ -185,5 +185,6 @@ position: absolute;
         right: 10px;
     }
 }
+
 
 
