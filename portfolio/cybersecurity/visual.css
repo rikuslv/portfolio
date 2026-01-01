@@ -177,7 +177,7 @@ a {
     top: auto !important;
     transform: none !important;
     margin: 20px 0 !important;
-    text-align: center !important;
+    text-align: left !important;
   }
 
   img {
@@ -213,6 +213,7 @@ a {
 }
 
 }
+
 
 
 
