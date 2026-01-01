@@ -66,7 +66,10 @@ a{
     text-align: center !important;
   }
 
-  h1, p, {
+  h1, h2, h3, p,
+  .txt, .txt2, .mintxt, .mintxt2,
+  .tasks, .newst1, .title, .study,
+  .atext, .about1, .about2, .abouth1, .abouth2 {
     position: static !important;
     margin: 20px auto !important;
     left: auto !important;
@@ -120,4 +123,5 @@ a{
     display: none !important;
   }
 }
+
 
