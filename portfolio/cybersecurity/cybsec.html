@@ -11,6 +11,9 @@
   <link rel="shortcut icon" type="image/x-icon" href="logo.png">
 
   <style>
+    #admin-panel {
+    display: none; 
+}
     .lightbox {
       display: none;
       position: fixed;
@@ -224,8 +227,39 @@
   }
 
   renderPortfolio();
+  // English Comment: Secret access logic
+let clickCount = 0;
+
+// English Comment: We wait for the sidebar to be rendered before adding the click listener
+function setupSecretAccess() {
+  const banditLink = document.querySelector('a[href="#bandit"]');
+  
+  if (banditLink) {
+    banditLink.addEventListener('click', (e) => {
+      clickCount++;
+      
+      if (clickCount === 5) {
+        const panel = document.getElementById('admin-panel');
+        panel.style.display = 'block';
+        
+        // English Comment: Scroll to the panel so you see it appeared
+        panel.scrollIntoView({ behavior: 'smooth' });
+        
+        // English Comment: Reset counter
+        clickCount = 0;
+        alert("Admin mode activated!");
+      }
+      
+      // English Comment: Optional: reset clicks if too much time passes between them
+      setTimeout(() => { clickCount = 0; }, 5000); 
+    });
+  }
+}
+
+
 </script>
 
 </body>
 </html>
+
 
