@@ -8,49 +8,53 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet" href="navigation.css?v=99">
   <link rel="stylesheet" href="visual.css">
+  <link rel="shortcut icon" type="image/x-icon" href="logo.png">
 
   <style>
-    /* English Comment: Hidden Admin Panel styled as a centered modal */
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center; align-items: center;
+      cursor: zoom-out;
+    }
+    .lightbox img {
+      max-width: 90%; max-height: 90%;
+      border: 2px solid #00bcd4;
+      box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+    }
+    .portfolio-img { cursor: zoom-in; }
+
+    /* Centered Admin Modal */
     #admin-panel {
       display: none; 
       position: fixed;
-      top: 50%;
-      left: 50%;
+      top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       background: #1a252f;
       padding: 30px;
       border: 2px solid #00bcd4;
-      box-shadow: 0 0 50px rgba(0,0,0,0.8);
+      box-shadow: 0 0 50px rgba(0,0,0,0.9);
       z-index: 10000;
-      width: 350px;
+      width: 380px;
+      max-width: 90%;
     }
-
     #admin-panel input, #admin-panel textarea {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      background: #2c3e50;
-      border: 1px solid #35495e;
-      color: white;
-      padding: 10px;
-      box-sizing: border-box;
+      display: block; width: 100%; margin: 12px 0;
+      background: #2c3e50; border: 1px solid #35495e;
+      color: white; padding: 10px; box-sizing: border-box;
     }
-
-    .close-btn {
-      float: right;
-      color: #ff4444;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    /* English Comment: Overlay to dim background when admin is open */
     #overlay {
       display: none;
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.85);
       z-index: 9999;
     }
+    .close-btn { float: right; color: #ff4444; cursor: pointer; font-weight: bold; }
   </style>
 </head>
 
@@ -60,7 +64,10 @@
   <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
   <div class="nav-links" id="navLinks">
     <a href="../../index.html">Home</a>
+    <a href="../../about/about.html">About</a>
+    <a href="../../news/news.html">News</a>
     <a href="../portfolio.html">Portfolio</a>
+    <a href="../../contact/contact.html">Contact</a>
   </div>
 </nav>
 
@@ -73,30 +80,61 @@
 
 <div class="content-container" id="portfolio-root"></div>
 
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+  <img id="lightbox-img" src="" alt="Zoomed view">
+</div>
+
 <div id="overlay" onclick="closeAdmin()"></div>
 <div id="admin-panel">
   <span class="close-btn" onclick="closeAdmin()">X</span>
   <h3 style="color: #00bcd4; margin-top: 0;">Admin Access</h3>
-  
   <input type="password" id="gh-token" placeholder="GitHub Personal Token">
-  
   <input type="text" id="new-title" placeholder="Project Title">
   <input type="text" id="new-id" placeholder="Project ID (no spaces)">
-  <input type="text" id="new-img" placeholder="Image Name (e.g. pic.png)">
-  <textarea id="new-desc" placeholder="English Description (HTML ok)"></textarea>
-  
-  <button onclick="saveToGitHub()" style="width:100%; padding:10px; background:#00bcd4; color:white; border:none; cursor:pointer; font-weight:bold;">Upload to GitHub</button>
-  <p id="status" style="color:#00bcd4; font-size:12px; margin-top:10px;"></p>
+  <input type="text" id="new-img" placeholder="Image Filename (e.g. test.png)">
+  <textarea id="new-desc" placeholder="English Description (HTML allowed)"></textarea>
+  <button onclick="saveToGitHub()" style="width:100%; padding:12px; background:#00bcd4; color:white; border:none; cursor:pointer; font-weight:bold;">Upload to GitHub</button>
+  <p id="status" style="color:#00bcd4; font-size:12px; margin-top:10px; text-align:center;"></p>
 </div>
 
 <script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+
   let clickCount = 0;
+
+  // English Comment: Full data array with all your projects
   const darbi = [
     {
       id: "bandit",
       title: "Bandit",
       img: "bandit.png",
-      desc: `What is a Bandit?<br><br>In this game, I got to <a href="#" target="_blank">level 16</a>.`
+      desc: `What is a Bandit?<br><br>Bandit is a game that, like most other games, is organized in levels. You start at Level 0 and try to “beat” or “finish” it.<br>Finishing a level results in information on how to start the next level.<br><a href="https://overthewire.org/wargames/bandit/" target="_blank">(Full description).</a><br><br>In this game, I got to <a href="https://docs.google.com/document/d/1jq_MTlrP-0r-AsPq3DgGgPLFU7Yc3fTxr7Q77fCjDSo/edit?usp=sharing" target="_blank">level 16</a>.`
+    },
+    {
+      id: "practice",
+      title: "Practice",
+      img: "seb.png",
+      desc: `I practice in SEB Bank, where I filled practice tasks:<br><br>1. Creation of ICT resources/network infrastructure documentation;<br>2. Familiarization with ICT security architecture and processes;<br>3. Technical tools (firewalls, IPS, IDS, etc.);<br>4. Security policy, usage rules, and related documentation;<br>5. Monitoring user activity;<br>6. Classification of system users;<br>7. Network/system management tools used in the organization.`
+    },
+    {
+      id: "evilbox",
+      title: "EVILBOX: ONE",
+      img: "evilbox.png",
+      desc: `EVILBOX: ONE is a cybersecurity Capture The Flag (CTF) competition platform. In this task, the objective is to obtain both the user flag and the root flag. (<a href="https://drive.google.com/file/d/1FdqM9bw7eqV5HDgHGl1gEvHjP3TdKfkW/view?usp=sharing" target="_blank">report</a>)`
+    },
+    {
+      id: "kiberplesis",
+      title: "Kiberplēsis",
+      img: "kiberplesis.png",
+      desc: `The "Kiberplēsis" competition is organized by CYBER CIRCLE. I achieved 360 points in the Kiberplēsis 2025 CTF competition, placing 80th.`
+    },
+    {
+      id: "jangow",
+      title: "Jangow: 1.0.1",
+      img: "jangow.png",
+      desc: `Jangow: 1.0.1 is a vulnerable virtual machine designed for security testing and learning penetration testing techniques.`
     }
   ];
 
@@ -104,20 +142,22 @@
     const container = document.getElementById('portfolio-root');
     const sidebar = document.getElementById('sidebar-links');
     
-    // Sidebar links
     const linksHTML = darbi.map(item => `<a href="#${item.id}" class="secret-trigger">${item.title}</a>`).join('');
     sidebar.innerHTML = `<div class="hl"></div><h2 class="sidebar-title">Cybersecurity</h2><div class="hl2"></div>${linksHTML}<div class="vl"></div>`;
 
-    // Content
     container.innerHTML = darbi.map(item => `
       <section id="${item.id}">
         <h2 class="section-title">${item.title}</h2>
-        <img src="${item.img}" class="portfolio-img">
+        <img src="${item.img}" alt="${item.title}" class="portfolio-img">
         <p class="description">${item.desc}</p>
       </section>
     `).join('');
 
-    // English Comment: Attach the secret 5-click listener to "Bandit" link
+    setupSecretClicks();
+    setupLightbox();
+  }
+
+  function setupSecretClicks() {
     document.querySelectorAll('.secret-trigger').forEach(link => {
       if(link.innerText === "Bandit") {
         link.addEventListener('click', (e) => {
@@ -127,7 +167,6 @@
             document.getElementById('overlay').style.display = 'block';
             clickCount = 0;
           }
-          // English Comment: Reset clicks after 3 seconds if not fast enough
           setTimeout(() => { clickCount = 0; }, 3000);
         });
       }
@@ -139,10 +178,19 @@
     document.getElementById('overlay').style.display = 'none';
   }
 
+  function setupLightbox() {
+    document.querySelectorAll('.portfolio-img').forEach(image => {
+      image.onclick = () => {
+        document.getElementById('lightbox').style.display = 'flex';
+        document.getElementById('lightbox-img').src = image.src;
+      };
+    });
+  }
+
   async function saveToGitHub() {
     const token = document.getElementById('gh-token').value;
-    const repo = "TAVS_LIETOTAJVARDS/REPROZITORIJS"; // <-- Nomaini šo!
-    const path = "cyber/cyber.html"; // <-- Pārbaudi ceļu!
+    const repo = "TAVS_LIETOTAJVARDS/REPROZITORIJS"; // <--- Nomaini šo!
+    const path = "cyber/cyber.html"; // <--- Pārbaudi ceļu!
     
     const title = document.getElementById('new-title').value;
     const id = document.getElementById('new-id').value;
@@ -151,8 +199,7 @@
     const status = document.getElementById('status');
 
     if(!token || !title) { status.innerText = "Error: Missing Token or Title"; return; }
-
-    status.innerText = "Pushing to GitHub...";
+    status.innerText = "Connecting...";
 
     try {
       const res = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
@@ -160,14 +207,12 @@
       });
       const data = await res.json();
       const oldContent = decodeURIComponent(escape(atob(data.content)));
-
       const newItem = `    {
       id: "${id}",
       title: "${title}",
       img: "${img}",
       desc: \`${desc}\`
     },`;
-
       const newContent = oldContent.replace('const darbi = [', `const darbi = [\n${newItem}`);
 
       await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
@@ -179,7 +224,6 @@
           sha: data.sha
         })
       });
-
       status.innerText = "Success! Reloading...";
       setTimeout(() => location.reload(), 2000);
     } catch (err) {
