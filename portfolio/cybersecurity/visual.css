@@ -3,7 +3,7 @@
 =========================== */
 body {
     background-color: #2c3e50;
-    font-family: 'Roboto Mono', monospace;
+    font-family: Roboto Mono;
     color: white;
     margin: 0;
     padding: 0;
@@ -174,3 +174,4 @@ h2.section-title {
         font-size: 15px;
     }
 }
+
