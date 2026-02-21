@@ -79,9 +79,11 @@ a:hover {
 
 /* Horizontal lines */
 .hl, .hl2 {
-    border-top: 2px solid white;
-    width: 100%;
-    margin: 5px 0;
+border-top: 2px solid white;
+  width: 400px;
+  position: absolute;
+  top: 14%;
+  left: -1%;
 }
 
 /* ===========================
@@ -172,3 +174,4 @@ h2.section-title {
         font-size: 15px;
     }
 }
+
