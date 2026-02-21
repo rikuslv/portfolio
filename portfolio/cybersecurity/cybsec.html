@@ -67,7 +67,7 @@
   <div class="vl"></div>
 </div>
 
-<div class="content-container">
+<div class="content-container" id="portfolio-root">
   
   <section id="bandit">
     <h2 class="section-title">Bandit</h2>
@@ -127,16 +127,70 @@
     navLinks.classList.toggle("active");
   }
 
-  // Lightbox click logic
-  document.querySelectorAll('.portfolio-img').forEach(image => {
-    image.onclick = () => {
-      document.getElementById('lightbox').style.display = 'flex';
-      document.getElementById('lightbox-img').src = image.src;
-    };
-  });
+  // English Comment: Data array for portfolio items.
+  const darbi = [
+    {
+      id: "bandit",
+      title: "Bandit",
+      img: "bandit.png",
+      link: "https://docs.google.com/document/d/1jq_MTlrP-0r-AsPq3DgGgPLFU7Yc3fTxr7Q77fCjDSo/edit?usp=sharing",
+      desc: "Bandit is a game organized in levels. Finishing a level results in information on how to start the next level."
+    },
+    {
+      id: "practice",
+      title: "Practice",
+      img: "seb.png",
+      link: "#",
+      desc: "I practice in SEB Bank, where I filled practice tasks: network infrastructure, security architecture, etc."
+    },
+    {
+      id: "kiberplesis",
+      title: "Kiberplēsis",
+      img: "kiberplesis.png",
+      link: "https://kiberplesis.lv/",
+      desc: "I achieved 360 points in the Kiberplēsis 2025 CTF competition, placing 80th."
+    }
+  ]; // <-- Šeit tev pietrūka šīs beigas!
+
+  function renderPortfolio() {
+    const container = document.getElementById('portfolio-root');
+    if(!container) return; // Drošībai, ja elements vēl nav ielādēts
+
+    container.innerHTML = darbi.map(projekts => `
+      <section id="${projekts.id}">
+        <h2 class="section-title">${projekts.title}</h2>
+        <img src="${projekts.img}" alt="${projekts.title}" class="portfolio-img">
+        <p class="description">
+          ${projekts.desc}<br><br>
+          <a href="${projekts.link}" target="_blank">Apskatīt darbu/ziņojumu</a>
+        </p>
+      </section>
+    `).join('');
+
+    // English Comment: Lightbox logic must run AFTER images are added to the page
+    setupLightbox();
+  }
+
+  function setupLightbox() {
+    document.querySelectorAll('.portfolio-img').forEach(image => {
+      image.onclick = () => {
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        if(lb && lbImg) {
+          lb.style.display = 'flex';
+          lbImg.src = image.src;
+        }
+      };
+    });
+  }
+
+  renderPortfolio();
 </script>
 
+
+  
 </body>
 </html>
+
 
 
