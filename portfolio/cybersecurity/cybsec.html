@@ -11,7 +11,6 @@
   <link rel="shortcut icon" type="image/x-icon" href="logo.png">
 
   <style>
-    /* English Comment: Lightbox styles */
     .lightbox {
       display: none;
       position: fixed;
@@ -33,6 +32,13 @@
     }
     .portfolio-img {
       cursor: zoom-in;
+    }
+    /* Admin paneļa stils, lai tas neizbojātu kopējo dizainu */
+    #admin-panel input, #admin-panel textarea {
+      background: #2c3e50;
+      border: 1px solid #00bcd4;
+      color: white;
+      padding: 8px;
     }
   </style>
 </head>
@@ -57,11 +63,21 @@
   <div class="vl"></div>
 </div>
 
-<div class="content-container" id="portfolio-root">
-  </div>
+<div class="content-container" id="portfolio-root"></div>
 
 <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
   <img id="lightbox-img" src="" alt="Zoomed view">
+</div>
+
+<hr style="margin-top: 100px; border: 1px solid #35495e;">
+<div id="admin-panel" style="padding: 50px; background: #1a252f;">
+  <h3 style="color: #00bcd4;">Add New Portfolio Item (Auto-Push to GitHub)</h3>
+  <input type="text" id="new-title" placeholder="Project Title" style="display:block; margin:10px 0; width:300px;">
+  <input type="text" id="new-id" placeholder="Project ID (unique, no spaces)" style="display:block; margin:10px 0; width:300px;">
+  <input type="text" id="new-img" placeholder="Image Filename (e.g., test.png)" style="display:block; margin:10px 0; width:300px;">
+  <textarea id="new-desc" placeholder="English Description (HTML allowed)" style="display:block; margin:10px 0; width:300px; height:100px;"></textarea>
+  <button onclick="saveToGitHub()" style="padding:10px 20px; background:#00bcd4; color:white; border:none; cursor:pointer; font-weight:bold;">Upload to GitHub</button>
+  <p id="status" style="margin-top: 10px; color: #00bcd4;"></p>
 </div>
 
 <script>
@@ -70,7 +86,6 @@
     navLinks.classList.toggle("active");
   }
 
-  // English Comment: Data array with your original English descriptions and links.
   const darbi = [
     {
       id: "bandit",
@@ -123,7 +138,6 @@
     const sidebar = document.getElementById('sidebar-links');
     if(!container || !sidebar) return;
 
-    // Render Sidebar
     const linksHTML = darbi.map(item => `<a href="#${item.id}">${item.title}</a>`).join('');
     sidebar.innerHTML = `
       <div class="hl"></div>
@@ -133,14 +147,11 @@
       <div class="vl"></div>
     `;
 
-    // Render Content
     container.innerHTML = darbi.map(item => `
       <section id="${item.id}">
         <h2 class="section-title">${item.title}</h2>
         <img src="${item.img}" alt="${item.title}" class="portfolio-img">
-        <p class="description">
-          ${item.desc}
-        </p>
+        <p class="description">${item.desc}</p>
       </section>
     `).join('');
 
@@ -154,6 +165,62 @@
         document.getElementById('lightbox-img').src = image.src;
       };
     });
+  }
+
+  // --- GITHUB API FUNKCIJA ---
+  async function saveToGitHub() {
+    const token = "TAVS_TOKENS_ŠEIT"; // <--- IELIEC SAVU TOKENU NO GITHUB
+    const repo = "rikuslv/portfolio"; 
+    const path = "portfolio/cyber/cyber.html"; // <--- PĀRBAUDI VAI ŠIS CEĻŠ IR PAREIZS!
+    
+    const title = document.getElementById('new-title').value;
+    const id = document.getElementById('new-id').value;
+    const img = document.getElementById('new-img').value;
+    const desc = document.getElementById('new-desc').value;
+    const status = document.getElementById('status');
+
+    if(!title || !id || !token) { alert("Please fill Title, ID and ensure Token is set!"); return; }
+
+    status.innerText = "Connecting to GitHub...";
+
+    try {
+      const response = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+        headers: { "Authorization": `token ${token}` }
+      });
+      const fileData = await response.json();
+      const oldContent = decodeURIComponent(escape(atob(fileData.content)));
+
+      const newItem = `    {
+      id: "${id}",
+      title: "${title}",
+      img: "${img}",
+      desc: \`${desc}\`
+    },`;
+
+      const newContent = oldContent.replace('const darbi = [', `const darbi = [\n${newItem}`);
+
+      const updateResponse = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+        method: "PUT",
+        headers: { 
+          "Authorization": `token ${token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: `Added new project: ${title}`,
+          content: btoa(unescape(encodeURIComponent(newContent))),
+          sha: fileData.sha
+        })
+      });
+
+      if (updateResponse.ok) {
+        status.innerText = "SUCCESS! Refreshing...";
+        setTimeout(() => location.reload(), 3000);
+      } else {
+        status.innerText = "Error. Check token permissions.";
+      }
+    } catch (err) {
+      status.innerText = "Error: " + err.message;
+    }
   }
 
   renderPortfolio();
