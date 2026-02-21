@@ -79,13 +79,12 @@ a:hover {
 
 /* Horizontal lines */
 .hl, .hl2 {
-    border-top: 2px solid white;
-    width: 400px;         
-    position: absolute;   
-    top: 13%;             
-    left: -1%;            
+    border-top: 2px solid white !important;
+    width: 400px !important;
+    position: absolute !important;
+    top: 13% !important;
+    left: -1% !important;
 }
-
 /* ===========================
    MAIN CONTENT AREA
 =========================== */
@@ -174,5 +173,6 @@ h2.section-title {
         font-size: 15px;
     }
 }
+
 
 
