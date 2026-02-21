@@ -188,50 +188,80 @@
   }
 
   async function saveToGitHub() {
-    const token = document.getElementById('gh-token').value;
-    const repo = "TAVS_LIETOTAJVARDS/REPROZITORIJS"; // <--- Nomaini šo!
-    const path = "cyber/cyber.html"; // <--- Pārbaudi ceļu!
+  const token = document.getElementById('gh-token').value;
+  const repo = "rikuslv/portfolio"; 
+  const path = "cyber/cyber.html";   
+  
+  const title = document.getElementById('new-title').value;
+  const id = document.getElementById('new-id').value;
+  const img = document.getElementById('new-img').value;
+  const desc = document.getElementById('new-desc').value;
+  const status = document.getElementById('status');
+
+  if(!token || !title || !id) { 
+    status.innerText = "Error: Missing Token, Title or ID"; 
+    return; 
+  }
+
+  status.innerText = "Connecting to GitHub...";
+
+  try {
+    // 1. Get current file data
+    const res = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+      headers: { "Authorization": `token ${token}` }
+    });
     
-    const title = document.getElementById('new-title').value;
-    const id = document.getElementById('new-id').value;
-    const img = document.getElementById('new-img').value;
-    const desc = document.getElementById('new-desc').value;
-    const status = document.getElementById('status');
+    if (!res.ok) throw new Error("Could not find the file on GitHub. Check 'repo' and 'path' variables.");
+    
+    const data = await res.json();
+    
+    // English Comment: Decoding with UTF-8 support to avoid "invalid character" errors
+    const oldContent = decodeURIComponent(escape(atob(data.content)));
 
-    if(!token || !title) { status.innerText = "Error: Missing Token or Title"; return; }
-    status.innerText = "Connecting...";
-
-    try {
-      const res = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
-        headers: { "Authorization": `token ${token}` }
-      });
-      const data = await res.json();
-      const oldContent = decodeURIComponent(escape(atob(data.content)));
-      const newItem = `    {
+    // 2. Prepare new item
+    const newItem = `    {
       id: "${id}",
       title: "${title}",
       img: "${img}",
       desc: \`${desc}\`
     },`;
-      const newContent = oldContent.replace('const darbi = [', `const darbi = [\n${newItem}`);
 
-      await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
-        method: "PUT",
-        headers: { "Authorization": `token ${token}`, "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: `Added ${title}`,
-          content: btoa(unescape(encodeURIComponent(newContent))),
-          sha: data.sha
-        })
-      });
-      status.innerText = "Success! Reloading...";
-      setTimeout(() => location.reload(), 2000);
-    } catch (err) {
-      status.innerText = "Error: " + err.message;
+    // 3. Insert into the array
+    const newContent = oldContent.replace('const darbi = [', `const darbi = [\n${newItem}`);
+
+    // 4. Push back to GitHub
+    // English Comment: Encoding with UTF-8 support before sending to btoa()
+    const encodedContent = btoa(unescape(encodeURIComponent(newContent)));
+
+    const updateRes = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+      method: "PUT",
+      headers: { 
+        "Authorization": `token ${token}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: `Added project: ${title}`,
+        content: encodedContent,
+        sha: data.sha
+      })
+    });
+
+    if (updateRes.ok) {
+      status.innerText = "Success! Page will reload in 3s.";
+      status.style.color = "#44ff44";
+      setTimeout(() => location.reload(), 3000);
+    } else {
+      const errorData = await updateRes.json();
+      status.innerText = "GitHub Error: " + errorData.message;
     }
-  }
 
+  } catch (err) {
+    status.innerText = "Error: " + err.message;
+    console.error(err);
+  }
+}
   renderPortfolio();
 </script>
 </body>
 </html>
+
