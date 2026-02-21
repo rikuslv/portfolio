@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="lv">
-<head>
+<html lang="en"> <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cybersecurity</title>
@@ -10,6 +9,37 @@
   <link rel="stylesheet" href="navigation.css?v=99">
   <link rel="stylesheet" href="visual.css">
   <link rel="shortcut icon" type="image/x-icon" href="logo.png">
+
+  <style>
+    /* English Comment: Basic Lightbox styling to ensure it works even if visual.css is missing these rules */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 2px solid #00bcd4;
+      box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+    }
+    /* Indicator that images are clickable */
+    .bandit, .seb, .evilnox, .kiberplesis, .jangow {
+      cursor: zoom-in;
+      transition: opacity 0.3s;
+    }
+    .bandit:hover, .seb:hover, .evilnox:hover, .kiberplesis:hover, .jangow:hover {
+      opacity: 0.8;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,14 +52,13 @@
       <a href="../../about/about.html">About</a>
       <a href="../../news/news.html">News</a>
       <a href="../portfolio.html">Portfolio</a>
-      <a href="../../conntact/conntact.html">Contact</a>
+      <a href="../../contact/contact.html">Contact</a>
     </div>
   </nav>
 
-  <h1>Cybersecurity</h1>
-  
   <div class="tasks">
     <div class="hl"></div>
+    <h1 style="color: white; padding-left: 20px;">Cybersecurity</h1>
     <h2 class="tasks">Bandit</h2>
     <div class="hl2"></div>
     <h2 class="tasks">Practice</h2>
@@ -40,13 +69,13 @@
   </div>
 
   <h2 class="abouth1">Bandit</h2>
-  <img src="bandit.png" alt="bandit" class="bandit" width="800" height="280">
+  <img src="bandit.png" alt="Bandit Game Levels" class="bandit" width="800" height="280">
   <p class="about1">
     What is a Bandit?<br><br>
     Bandit is a game that, like most other games, is organized in levels. You start at Level 0 and try to “beat” or “finish” it.
     <br>Finishing a level results in information on how to start the next level.
     <br>The pages on this website for “Level &lt;X&gt;” contain information on how to start level X from the previous level.
-    <br><a href="https://overthewire.org/wargames/bandit/">(Full description).</a><br><br>
+    <br><a href="https://overthewire.org/wargames/bandit/" target="_blank">(Full description).</a><br><br>
     In this game, I got to
     <a href="https://docs.google.com/document/d/1jq_MTlrP-0r-AsPq3DgGgPLFU7Yc3fTxr7Q77fCjDSo/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
       level 16
@@ -54,7 +83,7 @@
   </p>
 
   <h2 class="abouth2">Practice</h2>
-  <img src="seb.png" alt="seb" class="seb" width="800" height="280">
+  <img src="seb.png" alt="Practice at SEB Bank" class="seb" width="800" height="280">
   <p class="about2">
     I practice in SEB Bank, where I filled practice tasks:<br><br>
     1. Creation of ICT resources/network infrastructure documentation;<br>
@@ -67,7 +96,7 @@
   </p>
 
   <h2 class="abouth3">EVILBOX: ONE</h2>
-  <img src="evilbox.png" alt="evilnox" class="evilnox" width="800" height="280"><br>
+  <img src="evilbox.png" alt="EvilBox One CTF" class="evilnox" width="800" height="280"><br>
   <p class="about3">
    EVILBOX: ONE is a cybersecurity Capture The Flag (CTF) competition platform that offers a variety of challenges<br> designed to test and enhance participants' cybersecurity skills.
     In this task, the objective is to obtain both the user flag and the root flag.
@@ -75,13 +104,13 @@
   </p>
 
   <h2 class="abouth4">Kiberplēsis</h2>
-  <img src="kiberplesis.png" alt="kiberplesis" class="kiberplesis" width="400" height="400"><br><br>
+  <img src="kiberplesis.png" alt="Kiberplesis 2025 results" class="kiberplesis" width="400" height="400"><br><br>
   <p class="about4">The "<a href="https://kiberplesis.lv/" target="_blank" rel="noopener noreferrer">Kiberplēsis</a>" competition is organized by the Latvian cybersecurity services company CYBER CIRCLE.
   <br><br>
   I achieved 360 points in the Kiberplēsis 2025 CTF competition, placing 80th.</p>
 
   <h2 class="abouth5">Jangow: 1.0.1</h2>
-  <img src="jangow.png" alt="jangow" class="jangow" width="800" height="280"><br>
+  <img src="jangow.png" alt="Jangow Box Report" class="jangow" width="800" height="280"><br>
   <p class="about5">
     Description<br><br>
     Difficulty: easy<br>
@@ -89,13 +118,31 @@
     My report <a href="https://drive.google.com/file/d/1P5HtphYRhzz4hIE_xCfwiVQxUQU_p4WC/view?usp=sharing" target="_blank" rel="noopener noreferrer">file</a>
   </p>
 
+  <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="Large view">
+  </div>
+
   <script>
     function toggleMenu() {
       const navLinks = document.getElementById("navLinks");
       navLinks.classList.toggle("active");
     }
+
+    // English Comment: Lightbox Logic
+    // Selects all portfolio images and adds a click event to show them in the overlay
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('img').forEach(img => {
+      // Exclude icons or logos if they shouldn't be zoomable
+      if (!img.classList.contains('menu-icon')) {
+        img.onclick = () => {
+          lightbox.style.display = 'flex';
+          lightboxImg.src = img.src;
+        };
+      }
+    });
   </script>
 
 </body>
 </html>
-
