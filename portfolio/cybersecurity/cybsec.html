@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="en"> <head>
+<html lang="en">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cybersecurity</title>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
   <link rel="stylesheet" href="navigation.css?v=99">
   <link rel="stylesheet" href="visual.css">
   <link rel="shortcut icon" type="image/x-icon" href="logo.png">
 
   <style>
-    /* English Comment: Basic Lightbox styling to ensure it works even if visual.css is missing these rules */
+    /* English Comment: Lightbox styles */
     .lightbox {
       display: none;
       position: fixed;
@@ -31,20 +31,15 @@
       border: 2px solid #00bcd4;
       box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
     }
-    /* Indicator that images are clickable */
-    .bandit, .seb, .evilnox, .kiberplesis, .jangow {
+    .portfolio-img {
       cursor: zoom-in;
-      transition: opacity 0.3s;
-    }
-    .bandit:hover, .seb:hover, .evilnox:hover, .kiberplesis:hover, .jangow:hover {
-      opacity: 0.8;
     }
   </style>
 </head>
 
 <body>
 
- <nav class="navbar">
+<nav class="navbar">
   <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
   <div class="nav-links" id="navLinks">
     <a href="../../index.html">Home</a>
@@ -55,67 +50,15 @@
   </div>
 </nav>
 
-<div class="tasks">
+<div class="tasks" id="sidebar-links">
   <div class="hl"></div>
   <h2 class="sidebar-title">Cybersecurity</h2>
   <div class="hl2"></div>
-  <a href="#bandit">Bandit</a>
-  <a href="#practice">Practice</a>
-  <a href="#evilbox">EVILBOX: ONE</a>
-  <a href="#kiberplesis">Kiberplēsis</a>
-  <a href="#jangow">Jangow: 1.0.1</a>
   <div class="vl"></div>
 </div>
 
 <div class="content-container" id="portfolio-root">
-  
-  <section id="bandit">
-    <h2 class="section-title">Bandit</h2>
-    <img src="bandit.png" alt="bandit" class="portfolio-img">
-    <p class="description">
-      What is a Bandit?<br><br>
-      Bandit is a game that, like most other games, is organized in levels. You start at Level 0 and try to “beat” or “finish” it.
-      <br>Finishing a level results in information on how to start the next level.
-      <br><a href="https://overthewire.org/wargames/bandit/" target="_blank">(Full description).</a><br><br>
-      In this game, I got to <a href="https://docs.google.com/document/d/1jq_MTlrP-0r-AsPq3DgGgPLFU7Yc3fTxr7Q77fCjDSo/edit?usp=sharing" target="_blank">level 16</a>.
-    </p>
-  </section>
-
-  <section id="practice">
-    <h2 class="section-title">Practice</h2>
-    <img src="seb.png" alt="seb" class="portfolio-img">
-    <p class="description">
-      I practice in SEB Bank, where I filled practice tasks:<br><br>
-      1. Creation of ICT resources/network infrastructure documentation;<br>
-      2. Familiarization with ICT security architecture and processes;<br>
-      3. Technical tools (firewalls, IPS, IDS, etc.);<br>
-      4. Security policy, usage rules, and related documentation;<br>
-      5. Monitoring user activity;<br>
-      6. Classification of system users;<br>
-      7. Network/system management tools used in the organization.
-    </p>
-  </section>
-
-  <section id="evilbox">
-    <h2 class="section-title">EVILBOX: ONE</h2>
-    <img src="evilbox.png" alt="evilbox" class="portfolio-img">
-    <p class="description">
-      EVILBOX: ONE is a cybersecurity Capture The Flag (CTF) competition platform.
-      In this task, the objective is to obtain both the user flag and the root flag.
-      (<a href="https://drive.google.com/file/d/1FdqM9bw7eqV5HDgHGl1gEvHjP3TdKfkW/view?usp=sharing" target="_blank">report</a>)
-    </p>
-  </section>
-
-  <section id="kiberplesis">
-    <h2 class="section-title">Kiberplēsis</h2>
-    <img src="kiberplesis.png" alt="kiberplesis" class="portfolio-img">
-    <p class="description">
-      The "Kiberplēsis" competition is organized by CYBER CIRCLE.
-      I achieved 360 points in the Kiberplēsis 2025 CTF competition, placing 80th.
-    </p>
-  </section>
-
-</div>
+  </div>
 
 <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
   <img id="lightbox-img" src="" alt="Zoomed view">
@@ -127,59 +70,88 @@
     navLinks.classList.toggle("active");
   }
 
-  // English Comment: Data array for portfolio items.
+  // English Comment: Data array with your original English descriptions and links.
   const darbi = [
     {
       id: "bandit",
       title: "Bandit",
       img: "bandit.png",
-      link: "https://docs.google.com/document/d/1jq_MTlrP-0r-AsPq3DgGgPLFU7Yc3fTxr7Q77fCjDSo/edit?usp=sharing",
-      desc: "Bandit is a game organized in levels. Finishing a level results in information on how to start the next level."
+      desc: `What is a Bandit?<br><br>
+             Bandit is a game that, like most other games, is organized in levels. You start at Level 0 and try to “beat” or “finish” it.
+             <br>Finishing a level results in information on how to start the next level.
+             <br><a href="https://overthewire.org/wargames/bandit/" target="_blank">(Full description).</a><br><br>
+             In this game, I got to <a href="https://docs.google.com/document/d/1jq_MTlrP-0r-AsPq3DgGgPLFU7Yc3fTxr7Q77fCjDSo/edit?usp=sharing" target="_blank">level 16</a>.`
     },
     {
       id: "practice",
       title: "Practice",
       img: "seb.png",
-      link: "#",
-      desc: "I practice in SEB Bank, where I filled practice tasks: network infrastructure, security architecture, etc."
+      desc: `I practice in SEB Bank, where I filled practice tasks:<br><br>
+             1. Creation of ICT resources/network infrastructure documentation;<br>
+             2. Familiarization with ICT security architecture and processes;<br>
+             3. Technical tools (firewalls, IPS, IDS, etc.);<br>
+             4. Security policy, usage rules, and related documentation;<br>
+             5. Monitoring user activity;<br>
+             6. Classification of system users;<br>
+             7. Network/system management tools used in the organization.`
+    },
+    {
+      id: "evilbox",
+      title: "EVILBOX: ONE",
+      img: "evilbox.png",
+      desc: `EVILBOX: ONE is a cybersecurity Capture The Flag (CTF) competition platform.
+             In this task, the objective is to obtain both the user flag and the root flag.
+             (<a href="https://drive.google.com/file/d/1FdqM9bw7eqV5HDgHGl1gEvHjP3TdKfkW/view?usp=sharing" target="_blank">report</a>)`
     },
     {
       id: "kiberplesis",
       title: "Kiberplēsis",
       img: "kiberplesis.png",
-      link: "https://kiberplesis.lv/",
-      desc: "I achieved 360 points in the Kiberplēsis 2025 CTF competition, placing 80th."
+      desc: `The "Kiberplēsis" competition is organized by CYBER CIRCLE.
+             I achieved 360 points in the Kiberplēsis 2025 CTF competition, placing 80th.`
+    },
+    {
+      id: "jangow",
+      title: "Jangow: 1.0.1",
+      img: "jangow.png",
+      desc: `Jangow: 1.0.1 is a vulnerable virtual machine designed for security testing and learning penetration testing techniques.`
     }
-  ]; // <-- Šeit tev pietrūka šīs beigas!
+  ];
 
   function renderPortfolio() {
     const container = document.getElementById('portfolio-root');
-    if(!container) return; // Drošībai, ja elements vēl nav ielādēts
+    const sidebar = document.getElementById('sidebar-links');
+    if(!container || !sidebar) return;
 
-    container.innerHTML = darbi.map(projekts => `
-      <section id="${projekts.id}">
-        <h2 class="section-title">${projekts.title}</h2>
-        <img src="${projekts.img}" alt="${projekts.title}" class="portfolio-img">
+    // Render Sidebar
+    const linksHTML = darbi.map(item => `<a href="#${item.id}">${item.title}</a>`).join('');
+    sidebar.innerHTML = `
+      <div class="hl"></div>
+      <h2 class="sidebar-title">Cybersecurity</h2>
+      <div class="hl2"></div>
+      ${linksHTML}
+      <div class="vl"></div>
+    `;
+
+    // Render Content
+    container.innerHTML = darbi.map(item => `
+      <section id="${item.id}">
+        <h2 class="section-title">${item.title}</h2>
+        <img src="${item.img}" alt="${item.title}" class="portfolio-img">
         <p class="description">
-          ${projekts.desc}<br><br>
-          <a href="${projekts.link}" target="_blank">Apskatīt darbu/ziņojumu</a>
+          ${item.desc}
         </p>
       </section>
     `).join('');
 
-    // English Comment: Lightbox logic must run AFTER images are added to the page
     setupLightbox();
   }
 
   function setupLightbox() {
     document.querySelectorAll('.portfolio-img').forEach(image => {
       image.onclick = () => {
-        const lb = document.getElementById('lightbox');
-        const lbImg = document.getElementById('lightbox-img');
-        if(lb && lbImg) {
-          lb.style.display = 'flex';
-          lbImg.src = image.src;
-        }
+        document.getElementById('lightbox').style.display = 'flex';
+        document.getElementById('lightbox-img').src = image.src;
       };
     });
   }
@@ -187,10 +159,5 @@
   renderPortfolio();
 </script>
 
-
-  
 </body>
 </html>
-
-
-
