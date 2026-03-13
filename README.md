@@ -5,6 +5,7 @@ This is my personal portfolio website. It showcases my work, skills, education a
 ### Technologies Used
 - HTML
 - CSS
+- JavaScript
 
 ### Purpose
 
