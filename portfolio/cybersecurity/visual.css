@@ -51,11 +51,9 @@ a:hover {
 }
 
 .sidebar-title {
-    margin-top: 80px;
-    font-size: 22px; /* Smaller to prevent overlap */
-    margin: 10px 0;
+    font-size: 22px;
+    margin: 15px 0 25px 0; /* Increased bottom margin to create space below the line */
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .tasks a {
