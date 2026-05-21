@@ -51,8 +51,7 @@ a:hover {
 }
 
 .sidebar-title {
-    position: absolute;
-    top: 20px;
+    margin-top: 80px;
     font-size: 22px; /* Smaller to prevent overlap */
     margin: 10px 0;
     text-transform: uppercase;
