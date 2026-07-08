@@ -1,3 +1,28 @@
+
+/* NEWS PAGE MOBILE SUPPORT */
+#news-container {
+  max-width: 900px;
+  margin: 40px auto 80px auto;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.title {
+  font-size: clamp(32px, 6vw, 50px);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#admin-panel {
+  width: min(90%, 420px);
+}
+
+#admin-panel input,
+#admin-panel textarea,
+#admin-panel button {
+  width: 100%;
+}
+
 body{
 	background: #2c3e50;
     font-family: Roboto Mono;
@@ -5,7 +30,7 @@ body{
 }
 
 .translate-link {
-    position: fixed;
+    position: fixed !important;
     top: 20px;
     right: 20px;
     padding: 10px 15px;
@@ -16,9 +41,11 @@ body{
     font-weight: bold;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
     transition: 0.3s;
-    z-index: 1001;
+    z-index: 99999;
     cursor: pointer;
     font-size: 16px;
+
+    pointer-events: auto;
 }
 
 
@@ -50,7 +77,7 @@ body{
 
   h1, h2, h3, p,
   .txt, .txt2, .mintxt, .mintxt2,
-  .tasks, .newst1, .title, .study,
+  .tasks, .newst1, .news1, .title, .study,
   .atext, .about1, .about2, .abouth1, .abouth2 {
     position: static !important;
     margin: 20px auto !important;

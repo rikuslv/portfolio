@@ -2,7 +2,7 @@
    DESKTOP VERSION
    =============================== */
 .navbar {
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 10px 25px;
     width: fit-content;
     background: #151515;
@@ -18,7 +18,7 @@
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 20px;
 }
 
 .navbar a {
@@ -39,71 +39,50 @@
     display: none;
     color: white;
     cursor: pointer;
-    font-size: 35px;
-    user-select: none;
+    font-size: 30px;
+    background: #151515; /* Dark background like in the image */
+    padding: 10px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 /* ===============================
-   MOBILE VERSION (Below 700px)
+   MOBILE VERSION (Screens below 700px)
    =============================== */
 @media only screen and (max-width: 700px) {
     .navbar {
-        display: flex !important;
-        background: none !important;
-        background-color: transparent !important;
+        background: transparent !important; /* Main bar invisible */
         box-shadow: none !important;
-        border: none !important;
-        outline: none !important;
-        
-
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 15px 20px !important;
-        margin: 0 !important;
-        position: relative !important;
-        
-        justify-content: flex-start !important; 
+        width: 100%;
+        justify-content: center !important; /* Center the icon like in the image */
+        margin: 10px auto !important;
     }
 
     .menu-icon {
-        display: block !important;
-        color: #ffffff !important;
-        font-size: 35px !important;
-        cursor: pointer !important;
-        z-index: 1002 !important;
+        display: block !important; /* Show the icon button */
     }
 
     .nav-links {
-
-        display: none; 
+        display: none; /* Hidden by default */
         flex-direction: column;
         position: absolute;
-        top: 100%; 
-        left: 20px;
-        
-    
-        background: rgba(21, 21, 21, 0.98) !important; 
-        width: 220px;
-        border-radius: 12px;
-        padding: 10px 0;
-        z-index: 1000;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #151515;
+        width: 80%;
+        border-radius: 14px;
+        padding: 15px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
-   
     .nav-links.active {
         display: flex !important;
     }
 
     .nav-links a {
-        margin: 0 !important;
-        text-align: left !important;
-        padding: 15px 25px !important;
-        width: 100% !important;
-        font-size: 18px !important;
-        border-radius: 0 !important;
-        background: transparent !important;
-        color: #ffffff !important;
-        display: block !important;
+        text-align: center;
+        padding: 12px;
+        width: 100%;
     }
 }

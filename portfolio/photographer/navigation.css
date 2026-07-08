@@ -75,3 +75,30 @@ body {
   font-family: sans-serif;
 }
 
+@media only screen and (max-width: 700px) {
+  nav {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    background: rgba(21, 21, 21, 0.9);
+    border-radius: 12px;
+    margin: 10px auto;
+  }
+
+  nav a {
+    width: 100%;
+    display: block;
+    padding: 14px 12px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .animation {
+    display: none !important;
+  }
+}
+

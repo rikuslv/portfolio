@@ -18,7 +18,7 @@
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 20px;
 }
 
 .navbar a {
@@ -39,7 +39,11 @@
     display: none;
     color: white;
     cursor: pointer;
-    font-size: 35px;
+    font-size: 30px;
+    background: #151515; /* Dark background like in the image */
+    padding: 10px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 /* ===============================
@@ -47,38 +51,29 @@
    =============================== */
 @media only screen and (max-width: 700px) {
     .navbar {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        
-        /* Transparent background */
-        background: transparent !important;
+        background: transparent !important; /* Main bar invisible */
         box-shadow: none !important;
-        
-        /* Push icon to the right */
-        justify-content: flex-end !important; 
         width: 100%;
-        padding: 10px 20px;
-        margin: 10px 0 !important;
+        justify-content: center !important; /* Center the icon like in the image */
+        margin: 10px auto !important;
     }
 
     .menu-icon {
-        display: block !important;
+        display: block !important; /* Show the icon button */
     }
 
     .nav-links {
-        display: none; 
+        display: none; /* Hidden by default */
         flex-direction: column;
         position: absolute;
         top: 60px;
-        right: 20px;
-        
-        /* Optional: background only for the dropdown links */
-        background: rgba(21, 21, 21, 0.95); 
-        width: 200px;
-        border-radius: 10px;
-        padding: 10px 0;
-        z-index: 1000;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #151515;
+        width: 80%;
+        border-radius: 14px;
+        padding: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
     .nav-links.active {
@@ -86,10 +81,8 @@
     }
 
     .nav-links a {
-        margin: 0;
-        text-align: right;
-        padding: 12px 20px;
+        text-align: center;
+        padding: 12px;
         width: 100%;
-        border-radius: 0;
     }
 }

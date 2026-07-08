@@ -2,7 +2,7 @@
    DESKTOP VERSION
    =============================== */
 .navbar {
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 10px 25px;
     width: fit-content;
     background: #151515;
@@ -18,7 +18,7 @@
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 20px;
 }
 
 .navbar a {
@@ -35,71 +35,54 @@
     color: #000;
 }
 
-/* Hidden by default on desktop */
 .menu-icon {
     display: none;
     color: white;
     cursor: pointer;
-    font-size: 35px;
-    user-select: none;
+    font-size: 30px;
+    background: #151515; /* Dark background like in the image */
+    padding: 10px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 /* ===============================
-   MOBILE VERSION (Below 700px)
+   MOBILE VERSION (Screens below 700px)
    =============================== */
 @media only screen and (max-width: 700px) {
     .navbar {
-        /* Forces full transparency on mobile */
-        display: flex !important;
-        background: transparent !important;
-        background-color: transparent !important;
+        background: transparent !important; /* Main bar invisible */
         box-shadow: none !important;
-        border: none !important;
-        
         width: 100%;
-        padding: 15px 20px;
-        margin: 0 auto !important;
-        
-        /* Positions the hamburger icon on the LEFT */
-        justify-content: flex-start !important; 
+        justify-content: center !important; /* Center the icon like in the image */
+        margin: 10px auto !important;
     }
 
     .menu-icon {
-        display: block !important;
-        /* Ensures icon is clearly visible on dark background */
-        color: #ffffff !important; 
+        display: block !important; /* Show the icon button */
     }
 
     .nav-links {
-        /* Hidden until 'active' class is added via JS */
-        display: none; 
+        display: none; /* Hidden by default */
         flex-direction: column;
         position: absolute;
         top: 60px;
-        
-        /* Dropdown aligns to the LEFT */
-        left: 20px; 
-        right: auto;
-        
-        background: rgba(21, 21, 21, 0.98); 
-        width: 200px;
-        border-radius: 12px;
-        padding: 10px 0;
-        z-index: 1000;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #151515;
+        width: 80%;
+        border-radius: 14px;
+        padding: 15px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
 
-    /* Shown when the menu icon is clicked */
     .nav-links.active {
         display: flex !important;
     }
 
     .nav-links a {
-        margin: 0;
-        text-align: left; 
-        padding: 15px 25px;
+        text-align: center;
+        padding: 12px;
         width: 100%;
-        font-size: 18px;
-        border-radius: 0;
     }
 }
