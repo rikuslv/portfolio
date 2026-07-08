@@ -60,20 +60,24 @@
 
 <body>
 
+  <button class="translate-link" onclick="toggleLanguage()">
+     Latvian
+  </button>
+
 <nav class="navbar">
   <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
   <div class="nav-links" id="navLinks">
-    <a href="../../index.html">Home</a>
-    <a href="../../about/about.html">About</a>
-    <a href="../../news/news.html">News</a>
-    <a href="../portfolio.html">Portfolio</a>
-    <a href="../../conntact/conntact.html"">Contact</a>
+    <a href="../../index.html" data-i18="home">Home</a>
+    <a href="../../about/about.html" data-i18="about">About</a>
+    <a href="../../news/news.html" data-i18="news">News</a>
+    <a href="../portfolio.html" data-i18="portfolio">Portfolio</a>
+    <a href="../../conntact/conntact.html" data-i18="contact">Contact</a>
   </div>
 </nav>
 
 <div class="tasks" id="sidebar-links">
   <div class="hl"></div>
-  <h2 class="sidebar-title">Cybersecurity</h2>
+  <h2 class="sidebar-title" data-i18="cybersecurity">Cybersecurity</h2>
   <div class="hl2"></div>
   <div class="vl"></div>
 </div>
@@ -87,13 +91,13 @@
 <div id="overlay" onclick="closeAdmin()"></div>
 <div id="admin-panel">
   <span class="close-btn" onclick="closeAdmin()">X</span>
-  <h3 style="color: #00bcd4; margin-top: 0;">Admin Access</h3>
-  <input type="password" id="gh-token" placeholder="GitHub Personal Token">
-  <input type="text" id="new-title" placeholder="Project Title">
-  <input type="text" id="new-id" placeholder="Project ID (no spaces)">
-  <input type="text" id="new-img" placeholder="Image Filename (e.g. test.png)">
-  <textarea id="new-desc" placeholder="English Description (HTML allowed)"></textarea>
-  <button onclick="saveToGitHub()" style="width:100%; padding:12px; background:#00bcd4; color:white; border:none; cursor:pointer; font-weight:bold;">Upload to GitHub</button>
+  <h3 style="color: #00bcd4; margin-top: 0;" data-i18="admin-access">Admin Access</h3>
+  <input type="password" id="gh-token" placeholder="GitHub Personal Token" data-i18-placeholder="github-token-placeholder">
+  <input type="text" id="new-title" placeholder="Project Title" data-i18-placeholder="project-title-placeholder">
+  <input type="text" id="new-id" placeholder="Project ID (no spaces)" data-i18-placeholder="project-id-placeholder">
+  <input type="text" id="new-img" placeholder="Image Filename (e.g. test.png)" data-i18-placeholder="image-filename-placeholder">
+  <textarea id="new-desc" placeholder="English Description (HTML allowed)" data-i18-placeholder="description-placeholder"></textarea>
+  <button onclick="saveToGitHub()" style="width:100%; padding:12px; background:#00bcd4; color:white; border:none; cursor:pointer; font-weight:bold;" data-i18="upload-to-github">Upload to GitHub</button>
   <p id="status" style="color:#00bcd4; font-size:12px; margin-top:10px; text-align:center;"></p>
 </div>
 
@@ -108,78 +112,45 @@
   const darbi = [
     {
       id: "prakse",
-      title: "Practice in Walleto",
-      img: "prakse.png",
-      desc: `UAB Walletto is a dynamic Lithuanian EMI regulated by the Bank of Lithuania. As a trusted Issuer and Acquirer with strong partnerships with Visa and Mastercard, we empower businesses to expand globally through our innovative payment solutions.<br>
-During my internship, I completed the following tasks:<br><br>
-
-
-Identify and document the services and protocols used in the infrastructure, describing their meaning and application:<br>
-
-Higher-level protocols (HTTPS, SSH, RDP, FTPS/SFTP, DNS, DHCP, etc.);<br>
-
-Lower-layer protocols that provide higher-layer functionality (TCP/UDP, ARP);<br>
-
-Security and VPN protocols (TLS, IPsec, OpenVPN).<br>
-
-For application layer protocols, determine the ports, services, and versions used.
-Analyze the operating principles of the protocols used, describing data flow, connection establishment, etc.<br><br>
-
-Identify potential vulnerabilities for the protocols and services used (based on their versions):<br>
-
-Determine the versions of the services used;<br>
-Find known vulnerabilities (CVE);<br>
-Evaluate potential risks.<br><br>
-
-Describe the nature of the identified vulnerabilities:<br>
-Explain the identified vulnerabilities;<br>
-Describe the potential consequences;<br>
-Describe at a high level how the vulnerabilities could be exploited.<br><br>
-Prepare a report/summary of:<br>
-
-Identified services and protocols;<br>
-Found vulnerabilities in services and/or protocols;<br>
-Recommendations for mitigating vulnerabilities and improving security.<br>`
+      titleKey: "project-prakse-title",
+      descKey: "project-prakse-desc",
+      img: "prakse.png"
     },
     {
       id: "natas",
-      title: "Natas",
-      img: "natas.png",
-      desc: `Natas teaches the basics of serverside web-security.
-
-Each level of natas consists of its own website located at <a href="http://natasX.natas.labs.overthewire.org">natas</a>, where X is the level number. There is no SSH login. To access a level, enter the username for that level (e.g. natas0 for level 0) and its password. (<a href="https://docs.google.com/document/d/1nB9x_FZvxbuZlr1WWEKVGk8y_Q11CUixMNABUtu71zk/edit?usp=sharing" target="_blank">report</a>)
-
-`
+      titleKey: "project-natas-title",
+      descKey: "project-natas-desc",
+      img: "natas.png"
     },
     {
       id: "bandit",
-      title: "Bandit",
-      img: "bandit.png",
-      desc: `What is a Bandit?<br><br>Bandit is a game that, like most other games, is organized in levels. You start at Level 0 and try to “beat” or “finish” it.<br>Finishing a level results in information on how to start the next level.<br><a href="https://overthewire.org/wargames/bandit/" target="_blank">(Full description).</a><br><br>In this game, I got to <a href="https://docs.google.com/document/d/1jq_MTlrP-0r-AsPq3DgGgPLFU7Yc3fTxr7Q77fCjDSo/edit?usp=sharing" target="_blank">level 16</a>.`
+      titleKey: "project-bandit-title",
+      descKey: "project-bandit-desc",
+      img: "bandit.png"
     },
     {
       id: "practice",
-      title: "Practice in SEB Bank",
-      img: "seb.png",
-      desc: `I practice in SEB Bank, where I filled practice tasks:<br><br>1. Creation of ICT resources/network infrastructure documentation;<br>2. Familiarization with ICT security architecture and processes;<br>3. Technical tools (firewalls, IPS, IDS, etc.);<br>4. Security policy, usage rules, and related documentation;<br>5. Monitoring user activity;<br>6. Classification of system users;<br>7. Network/system management tools used in the organization.`
+      titleKey: "project-seb-title",
+      descKey: "project-seb-desc",
+      img: "seb.png"
     },
     {
       id: "evilbox",
-      title: "EVILBOX: ONE",
-      img: "evilbox.png",
-      desc: `EVILBOX: ONE is a cybersecurity Capture The Flag (CTF) competition platform. In this task, the objective is to obtain both the user flag and the root flag. (<a href="https://drive.google.com/file/d/1FdqM9bw7eqV5HDgHGl1gEvHjP3TdKfkW/view?usp=sharing" target="_blank">report</a>)`
+      titleKey: "project-evilbox-title",
+      descKey: "project-evilbox-desc",
+      img: "evilbox.png"
     },
     {
       id: "kiberplesis",
-      title: "Kiberplēsis",
-      img: "kiberplesis.png",
-      desc: `The "Kiberplēsis" competition is organized by CYBER CIRCLE. I achieved 360 points in the Kiberplēsis 2025 CTF competition, placing 80th.`
+      titleKey: "project-kiberplesis-title",
+      descKey: "project-kiberplesis-desc",
+      img: "kiberplesis.png"
     },
     {
       id: "jangow",
-      title: "Jangow: 1.0.1",
-      img: "jangow.png",
-      desc: `Jangow: 1.0.1 is a vulnerable virtual machine designed for security testing and learning penetration testing techniques.`
+      titleKey: "project-jangow-title",
+      descKey: "project-jangow-desc",
+      img: "jangow.png"
     }
   ];
 
@@ -187,14 +158,14 @@ Each level of natas consists of its own website located at <a href="http://natas
     const container = document.getElementById('portfolio-root');
     const sidebar = document.getElementById('sidebar-links');
     
-    const linksHTML = darbi.map(item => `<a href="#${item.id}" class="secret-trigger">${item.title}</a>`).join('');
-    sidebar.innerHTML = `<div class="hl"></div><h2 class="sidebar-title">Cybersecurity</h2><div class="hl2"></div>${linksHTML}<div class="vl"></div>`;
+    const linksHTML = darbi.map(item => `<a href="#${item.id}" class="secret-trigger" data-id="${item.id}">${translate(item.titleKey)}</a>`).join('');
+    sidebar.innerHTML = `<div class="hl"></div><h2 class="sidebar-title" data-i18="cybersecurity">Cybersecurity</h2><div class="hl2"></div>${linksHTML}<div class="vl"></div>`;
 
     container.innerHTML = darbi.map(item => `
       <section id="${item.id}">
-        <h2 class="section-title">${item.title}</h2>
-        <img src="${item.img}" alt="${item.title}" class="portfolio-img">
-        <p class="description">${item.desc}</p>
+        <h2 class="section-title">${translate(item.titleKey)}</h2>
+        <img src="${item.img}" alt="${translate(item.titleKey)}" class="portfolio-img">
+        <p class="description">${translate(item.descKey)}</p>
       </section>
     `).join('');
 
@@ -204,7 +175,7 @@ Each level of natas consists of its own website located at <a href="http://natas
 
   function setupSecretClicks() {
     document.querySelectorAll('.secret-trigger').forEach(link => {
-      if(link.innerText === "Bandit") {
+      if(link.getAttribute('data-id') === "bandit") {
         link.addEventListener('click', (e) => {
           clickCount++;
           if (clickCount >= 5) {
@@ -244,11 +215,11 @@ Each level of natas consists of its own website located at <a href="http://natas
   const status = document.getElementById('status');
 
   if(!token || !title || !id) { 
-    status.innerText = "Error: Missing Token, Title or ID"; 
+    status.innerText = translate("missing-token-title-id"); 
     return; 
   }
 
-  status.innerText = "Connecting to GitHub...";
+  status.innerText = translate("connecting-to-github");
 
   try {
     // 1. Get current file data
@@ -292,22 +263,25 @@ Each level of natas consists of its own website located at <a href="http://natas
     });
 
     if (updateRes.ok) {
-      status.innerText = "Success! Page will reload in 3s.";
+      status.innerText = translate("success-reload");
       status.style.color = "#44ff44";
       setTimeout(() => location.reload(), 3000);
     } else {
       const errorData = await updateRes.json();
-      status.innerText = "GitHub Error: " + errorData.message;
+      status.innerText = translate("github-error") + errorData.message;
     }
 
   } catch (err) {
-    status.innerText = "Error: " + err.message;
+    status.innerText = translate("error") + err.message;
     console.error(err);
   }
 }
-  renderPortfolio();
+  window.addEventListener('load', () => {
+    renderPortfolio();
+    updatePageContent();
+  });
 </script>
-</body>
+  <script src="../../javascript/lan.js"></script>
 </html>
 
 

@@ -4,12 +4,23 @@ body{
     color: white;
 }
 
-.title{
-	font-size: 50px;
-	position: absolute;
-	left: 5%;
-	top: 5%;
+.translate-link {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    transition: 0.3s;
+    z-index: 1001;
+    cursor: pointer;
+    font-size: 16px;
 }
+
 
 .newst1{
 	font-size: 30px;

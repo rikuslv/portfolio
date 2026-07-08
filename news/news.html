@@ -44,24 +44,27 @@
 
 <body>
 
+  <button class="translate-link" onclick="toggleLanguage()">
+     Latvian
+  </button>
+
   <nav class="navbar">
     <div class="nav-links" id="navLinks">
-      <a href="../index.html">Home</a>
-      <a href="../about/about.html">About Me</a>
-      <a href="#">News</a>
-      <a href="../portfolio/portfolio.html">Portfolio</a>
-      <a href="../conntact/conntact.html">Contact</a>
+      <a href="../index.html" data-i18="home">Home</a>
+      <a href="../about/about.html" data-i18="about">About</a>
+      <a href="#" data-i18="news">News</a>
+      <a href="../portfolio/portfolio.html" data-i18="portfolio">Portfolio</a>
+      <a href="../conntact/conntact.html" data-i18="contact">Contact</a>
     </div>
     <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
   </nav>
 
-  <h1 class="title" id="secret-trigger">News</h1>
+  <h1 class="title" id="secret-trigger" data-i18="news-title">News</h1>
 
-  <div id="news-container">
+  <div id="news-container" data-i18="news-content">
   
     <!-- <h2 class="newst1">nothing</h2>
     <p class="news1">..</p>-->
-  </div>
   </div>
 
   <div id="overlay" onclick="closeAdmin()"></div>
@@ -151,6 +154,7 @@
       }
     }
   </script>
+  <script src="../javascript/lan.js"></script>
 
 </body>
 </html>

@@ -13,23 +13,25 @@
 </head>
 <body>
 
+  <button class="translate-link" onclick="toggleLanguage()">
+     Latvian
+  </button>
+
 <nav class="navbar">
   <div class="nav-links" id="navLinks">
-    <a href="../index.html">Home</a>
-    <a href="../about/about.html">About Me</a>
-    <a href="../news/news.html">News</a>
-    <a href="../portfolio/portfolio.html">Portfolio</a>
-    <a href="../conntact/conntact.html">Contact</a>
-  </div>
-
+    <a href="../index.html" data-i18="home">Home</a>
+    <a href="../about/about.html" data-i18="about">About</a>
+    <a href="../news/news.html" data-i18="news">News</a>
+    <a href="../portfolio/portfolio.html" data-i18="portfolio">Portfolio</a>
+    <a href="../conntact/conntact.html" data-i18="contact">Contact</a>
   <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
 </nav>
 
-<h1>About me</h1>
+<h1 data-i18="about-name">About me</h1>
 <img class="circular--square" src="me.jpeg">
 
 <!-- <p class="mintxt">Cybersecurity</p> -->
-<p class="txt">
+<p class="txt" data-i18="about-text">
   Hello, my name is Richards Grava.<br><br> I study cybersecurity at Saldus Technical School, where I have spent the past three<br> years developing my skills in this field. During my studies,<br> I participated in the 2025 European Cybersecurity Challenge, successfully passing the first round,<br> and competed in the <a href="https://kiberplesis.lv/" target="_blank" rel="noopener noreferrer">KiberPlēsis</a> CTF, where I earned 360 points.
 </p>
 
@@ -45,7 +47,7 @@
     navLinks.classList.toggle("active");
   }
 </script>
-
+  <script src="../javascript/lan.js"></script>
 </body>
 </html>
 

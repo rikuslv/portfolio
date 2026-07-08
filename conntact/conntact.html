@@ -14,26 +14,30 @@
 
 <body>
 
+  <button class="translate-link" onclick="toggleLanguage()">
+     Latvian
+  </button>
+
   <nav class="navbar">
     <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
 
     <div class="nav-links" id="navLinks">
-      <a href="../index.html">Home</a>
-      <a href="../about/about.html">About</a>
-      <a href="../news/news.html">News</a>
-      <a href="../portfolio/portfolio.html">Portfolio</a>
-      <a href="#">Contact</a>
+      <a href="../index.html" data-i18="home">Home</a>
+      <a href="../about/about.html" data-i18="about">About</a>
+      <a href="../news/news.html" data-i18="news">News</a>
+      <a href="../portfolio/portfolio.html" data-i18="portfolio">Portfolio</a>
+      <a href="#" data-i18="contact">Contact</a>
     </div>
   </nav>
 
-  <h1 class="atext">How to contact me?</h1>
+  <h1 class="atext" data-i18="contact-title">How to contact me?</h1>
 
-  <p class="txt">
+  <p class="txt" data-i18="contact-text">
     To contact me, you can write me by email:<br>
     <strong><a href="mailto:richards.grava@gmail.com" style="color: white; text-decoration: none;">richards.grava@gmail.com</a></strong>
   </p>
 
-  <h2 class="study">I study here:</h2>
+  <h2 class="study" data-i18="contact-study">I study here:</h2>
 
 <iframe 
   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2192.4337297265406!2d22.512282177213187!3d56.66679142122481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ef9866374d12b7%3A0xbb18273c4e1fffb2!2sSaldus%20Tehnikums!5e0!3m2!1slv!2slv!4v1766935394576!5m2!1slv!2slv" 
@@ -51,6 +55,7 @@
       navLinks.classList.toggle("active");
     }
   </script>
+  <script src="../javascript/lan.js"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
