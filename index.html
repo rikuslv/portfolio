@@ -28,15 +28,37 @@
     </div>
   </nav>
 
-  <div class="three-column">
-    <div class="column-left">
-        <h1 data-i18="name">Richards Grava</h1>
-        <div class="min" data-i18="profession">Cybersecurity</div>
+  <main class="hero-container">
+    <h1 class="hero-title" data-i18="hero_title">Cybersecurity</h1>
+
+    <div class="profile-card">
+      <div class="avatar-wrapper">
+        <img src="prg.gif" alt="Profile Picture" class="avatar-img">
+      </div>
+
+      <h2 class="profile-name" data-i18="name">Richards Grava</h2>
+      <p class="profile-role" data-i18="profession">Cybersecurity</p>
+
+<ul class="info-list">
+  <li>Email: richards.grava@gmail.com</li>
+  <li><span data-i18="country_prefix">Country:</span> Latvia</li>
+  <li><span data-i18="student">Student</span></li>
+</ul>
+      <div class="skills-tags">
+        <span class="tag">My_SQL</span>
+        <span class="tag">C++</span>
+        <span class="tag">PYTHON</span>
+        <span class="tag">CURL</span>
+        <span class="tag">GOBUSTER</span>
+        <span class="tag">LINUX</span>
+      </div>
+      <!-- download CV button -->
+      <a href="R_Gra_CV-lv.pdf" class="cv-button" data-i18="download_cv" target="_blank" rel="noopener noreferrer">
+        Download CV
+        <span class="material-symbols-outlined icon-download">download</span>
+      </a>
     </div>
-    <div class="column-center">
-        <img src="prg.webp" alt="Programming image">
-    </div>
-  </div>
+  </main>
 
   <script src="javascript/lan.js"></script>
   <script>
@@ -45,20 +67,19 @@
       navLinks.classList.toggle("active");
     }
   </script>
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/699389423a5ba51c3b88d99c/1jhk50bvl';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+  
+  <!--Tawk.to chat-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/699389423a5ba51c3b88d99c/1jhk50bvl';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
 </body>
 </html>
-
-

@@ -1,7 +1,11 @@
 const translite = {
     en: {
         name: "Richards Grava",
-        profession: "Cybersecurity",
+        profession: "Cybersecurity / Developer",
+        hero_title: "Cybersecurity",
+        download_cv: "Download CV",
+        location: "Latvia",
+        student: "Student",
         "about-name": "About me",
         "about-text": "Hello, my name is Richards Grava. I study cybersecurity at Saldus Technical School, where I have spent the past three years developing my skills in this field. During my studies, I participated in the 2025 European Cybersecurity Challenge, successfully passing the first round, and competed in the KiberPlēsis CTF, where I earned 360 points.",
         "news-title": "News",
@@ -60,6 +64,10 @@ Recommendations for mitigating vulnerabilities and improving security.<br>`,
     lv: {
         name: "Ričards Grava",
         profession: "Kiberdrošība",
+        hero_title: "Kiberdrošība",
+        download_cv: "Lejupielādēt CV",
+        location: "Latvija",
+        student: "Students",
         "about-name": "Par mani",
         "about-text": "Sveiki, mans vārds ir Richards Grava. Es mācījos kiberdrošību Saldus Tehniskajā skolā, kur esmu pavadījis pēdējos trīs gadus, attīstot savas prasmes šajā nozarē. Mūsu mācībās, es piedalījos 2025. gada Eiropas kiberdrošības izraisē, veiksmīgi nokārtojot pirmo posmu, un sacentosies KiberPlēsis CTF, kur es ieguvu 360 punktus.",
         "news-title": "Jaunumi",
@@ -123,7 +131,14 @@ Ieteikumiem ievainojamību mazināšanai un drošības uzlabošanai.<br>`,
 }
 
 // Current language state
-let currentLanguage = 'en';
+const STORAGE_KEY = 'portfolio-language';
+
+function getInitialLanguage() {
+    const storedLanguage = localStorage.getItem(STORAGE_KEY);
+    return storedLanguage === 'lv' || storedLanguage === 'en' ? storedLanguage : 'en';
+}
+
+let currentLanguage = getInitialLanguage();
 
 function translate(key) {
     return translite[currentLanguage][key] || key;
@@ -132,6 +147,7 @@ function translate(key) {
 // Toggle language function - add your translation logic here
 function toggleLanguage() {
     currentLanguage = currentLanguage === 'en' ? 'lv' : 'en';
+    localStorage.setItem(STORAGE_KEY, currentLanguage);
     
     if (typeof renderPortfolio === 'function') {
         renderPortfolio();
@@ -170,6 +186,8 @@ function updatePageContent() {
     if (button) {
         button.textContent = currentLanguage === 'en' ? 'Latvian' : 'English';
     }
+
+    document.documentElement.lang = currentLanguage === 'lv' ? 'lv' : 'en';
 
     // Update the browser title if translated
     if (translite[currentLanguage].title) {
