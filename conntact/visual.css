@@ -5,6 +5,14 @@ body
   color: white;
 }
 
+a {
+  color: white;
+}
+
+a:hover {
+  color: #dfefff;
+}
+
 .translate-link {
     position: fixed !important;
     top: 20px;
@@ -28,25 +36,30 @@ body
   left: 16%;
   top: 23%;
   font-size: 45px;
+  z-index: 2;
 }
 .txt{
-position: absolute;
+  position: absolute;
   left: 23%;
   top: 33%;
   font-size: 25px;
+  z-index: 2;
 }
 
 iframe{
   position: absolute;
   right: 20px;
-  top: 25%; 
+  top: 25%;
+  z-index: 1;
+  max-width: calc(100vw - 40px);
+  border: 0;
 }
 .study{
   position: absolute;
-  position: absolute;
   right: 29%;
-  top: 16%; 
+  top: 16%;
   font-size: 25px;
+  z-index: 2;
 }
 
 /* ===========================================

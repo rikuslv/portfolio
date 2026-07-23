@@ -59,7 +59,7 @@ Recommendations for mitigating vulnerabilities and improving security.<br>`,
         "title": "Cybersecurity",
         "contact-title": "How to contact me?",
         "contact-text": `To contact me, you can write me by email:<br><strong><a href="mailto:richards.grava@gmail.com" style="color: white; text-decoration: none;">richards.grava@gmail.com</a></strong>`,
-        "contact-study": "I study here:"
+        "contact-study": `I study in <a href="https://www.saldus-tehnikums.lv/" target="_blank">Saldus Technical School</a>`
     },
     lv: {
         name: "Ričards Grava",
@@ -69,7 +69,7 @@ Recommendations for mitigating vulnerabilities and improving security.<br>`,
         location: "Latvija",
         student: "Students",
         "about-name": "Par mani",
-        "about-text": "Sveiki, mans vārds ir Richards Grava. Es mācījos kiberdrošību Saldus Tehniskajā skolā, kur esmu pavadījis pēdējos trīs gadus, attīstot savas prasmes šajā nozarē. Mūsu mācībās, es piedalījos 2025. gada Eiropas kiberdrošības izraisē, veiksmīgi nokārtojot pirmo posmu, un sacentosies KiberPlēsis CTF, kur es ieguvu 360 punktus.",
+        "about-text": "Sveiki, mans vārds ir Ričards Grava. Es mācījos kiberdrošību Saldus Tehniskajā skolā, kur esmu pavadījis pēdējos trīs gadus, attīstot savas prasmes šajā nozarē. Mūsu mācībās, es piedalījos 2025. gada Eiropas kiberdrošības izraisē, veiksmīgi nokārtojot pirmo posmu, un sacentosies KiberPlēsis CTF, kur es ieguvu 360 punktus.",
         "news-title": "Jaunumi",
         "portfolio-title": "Mans portfolio",
         home: "Sākums",
@@ -126,7 +126,7 @@ Ieteikumiem ievainojamību mazināšanai un drošības uzlabošanai.<br>`,
         "title": "Kiberdrošība",
         "contact-title": "Kā sazināties ar mani?",
         "contact-text": `Lai sazinātos ar mani, rakstiet:<br><strong><a href="mailto:richards.grava@gmail.com" style="color: white; text-decoration: none;">richards.grava@gmail.com</a></strong>`,
-        "contact-study": "Es studēju šeit:"
+        "contact-study": `Es mācos <a href="https://www.saldus-tehnikums.lv/" target="_blank">Saldus Tehnikumā</a>`
     }
 }
 
@@ -181,10 +181,10 @@ function updatePageContent() {
         }
     });
     
-    // Update button text
+    // Update button label with flag icons
     const button = document.querySelector('.translate-link');
     if (button) {
-        button.textContent = currentLanguage === 'en' ? 'Latvian' : 'English';
+        button.innerHTML = currentLanguage === 'en' ? '🇱🇻 Latvian' : '🇬🇧 English';
     }
 
     document.documentElement.lang = currentLanguage === 'lv' ? 'lv' : 'en';

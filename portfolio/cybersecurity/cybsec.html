@@ -64,6 +64,8 @@
      Latvian
   </button>
 
+  <button id="scrollTopBtn" class="scroll-top" onclick="scrollToTop()" aria-label="Scroll to top">↑</button>
+
 <nav class="navbar">
   <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">menu</span>
   <div class="nav-links" id="navLinks">
@@ -276,9 +278,22 @@
     console.error(err);
   }
 }
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleScrollTopButton() {
+    const button = document.getElementById('scrollTopBtn');
+    if (!button) return;
+    button.style.display = 'flex';
+  }
+
+  window.addEventListener('scroll', toggleScrollTopButton);
+
   window.addEventListener('load', () => {
     renderPortfolio();
     updatePageContent();
+    toggleScrollTopButton();
 
     const translateButton = document.querySelector('.translate-link');
     if (translateButton) {
