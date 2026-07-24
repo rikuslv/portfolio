@@ -59,7 +59,10 @@ Recommendations for mitigating vulnerabilities and improving security.<br>`,
         "title": "Cybersecurity",
         "contact-title": "How to contact me?",
         "contact-text": `To contact me, you can write me by email:<br><strong><a href="mailto:richards.grava@gmail.com" style="color: white; text-decoration: none;">richards.grava@gmail.com</a></strong>`,
-        "contact-study": `I study in <a href="https://www.saldus-tehnikums.lv/" target="_blank">Saldus Technical School</a>`
+        "contact-study": `I study in <a href="https://www.saldus-tehnikums.lv/" target="_blank">Saldus Technical School</a>`,
+        "news-welcome": "Welcome to the News Section!",
+        "news-intro": "Here you will find the latest updates about my intership datas and other relevant information.",
+        "profesion": "Cybersecurity"
     },
     lv: {
         name: "Ričards Grava",
@@ -126,7 +129,10 @@ Ieteikumiem ievainojamību mazināšanai un drošības uzlabošanai.<br>`,
         "title": "Kiberdrošība",
         "contact-title": "Kā sazināties ar mani?",
         "contact-text": `Lai sazinātos ar mani, rakstiet:<br><strong><a href="mailto:richards.grava@gmail.com" style="color: white; text-decoration: none;">richards.grava@gmail.com</a></strong>`,
-        "contact-study": `Es mācos <a href="https://www.saldus-tehnikums.lv/" target="_blank">Saldus Tehnikumā</a>`
+        "contact-study": `Es mācos <a href="https://www.saldus-tehnikums.lv/" target="_blank">Saldus Tehnikumā</a>`,
+        "news-welcome": "Laipni lūdzam Jaunumu sadaļā!",
+        "news-intro": "Šeit jūs atradīsiet jaunākos atjauninājumus par manu prakses datiem un citu svarīgu informāciju.",
+        "profesion": "Kiberdrošība"
     }
 }
 

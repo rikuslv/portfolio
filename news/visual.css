@@ -49,18 +49,27 @@ body{
 }
 
 
-.newst1{
-	font-size: 30px;
-	position: absolute;
-	left: 21%;
-	top: 20%;
+#news,
+#news1 {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
 }
 
-.news1{
-	font-size: 25px;
-	position: absolute;
-	left: 31%;
-	top: 28%;
+#news h2,
+#news1 h2 {
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+
+#news h3,
+#news1 h3 {
+  font-size: 22px;
+  line-height: 1.6;
+  margin: 10px 0;
 }
 
 
