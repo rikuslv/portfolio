@@ -59,10 +59,16 @@ Recommendations for mitigating vulnerabilities and improving security.<br>`,
         "title": "Cybersecurity",
         "contact-title": "How to contact me?",
         "contact-text": `To contact me, you can write me by email:<br><strong><a href="mailto:richards.grava@gmail.com" style="color: white; text-decoration: none;">richards.grava@gmail.com</a></strong>`,
-        "contact-study": `I study in <a href="https://www.saldus-tehnikums.lv/" target="_blank">Saldus Technical School</a>`,
+        "contact-study": `I study in <a href="https://www.saldustehnikums.lv" target="_blank">Saldus Technical School</a>`,
         "news-welcome": "Welcome to the News Section!",
         "news-intro": "Here you will find the latest updates about my intership datas and other relevant information.",
-        "profesion": "Cybersecurity"
+        "profesion": "Cybersecurity",
+        "news-post-1": "Find intership for practice, datas from 7 to 26 June.",
+        "news-post-2": "About tasks, I can say nearly intership start data",
+        "news-post-3": "I have found intership for practice, datas from 8 to 26 June.",
+        "news-post-4": "About tasks, I can say nearly intership start data",
+        "news-year-and-month-1": "7 June 2025",
+        "news-year-and-month-2": "8 June 2026"
     },
     lv: {
         name: "Ričards Grava",
@@ -129,10 +135,17 @@ Ieteikumiem ievainojamību mazināšanai un drošības uzlabošanai.<br>`,
         "title": "Kiberdrošība",
         "contact-title": "Kā sazināties ar mani?",
         "contact-text": `Lai sazinātos ar mani, rakstiet:<br><strong><a href="mailto:richards.grava@gmail.com" style="color: white; text-decoration: none;">richards.grava@gmail.com</a></strong>`,
-        "contact-study": `Es mācos <a href="https://www.saldus-tehnikums.lv/" target="_blank">Saldus Tehnikumā</a>`,
+        "contact-study": `Es mācos <a href="https://www.saldustehnikums.lv/" target="_blank">Saldus Tehnikumā</a>`,
         "news-welcome": "Laipni lūdzam Jaunumu sadaļā!",
         "news-intro": "Šeit jūs atradīsiet jaunākos atjauninājumus par manu prakses datiem un citu svarīgu informāciju.",
-        "profesion": "Kiberdrošība"
+        "profesion": "Kiberdrošība",
+        "news-year-and-month": "2025. gada jūnijs",
+        "news-post-1": "Atrast praksi, datumi no 7. līdz 26. jūnijam.",
+        "news-post-2": "Par uzdevumiem, es varu teikt, ka gandrīz prakses sākuma datums",
+        "news-post-3": "Es atradu praksi, datumi no 8. līdz 26. jūnijam.",
+        "news-post-4": "Par uzdevumiem, es varu teikt, ka gandrīz prakses sākuma datums",
+        "news-year-and-month-1": "2025. gada 7.jūnijs",
+        "news-year-and-month-2": "2026. gada 8.jūnijs"
     }
 }
 
