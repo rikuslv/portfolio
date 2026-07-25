@@ -1,6 +1,3 @@
 # CHAME configuration
-Versija: 1.0
-Autors: richardsgrava.com
-Funkcijas:
-- Konfigurācija
-- Datu apstrāde
+Version: 5.0
+AutoAuthore: rikuslv
