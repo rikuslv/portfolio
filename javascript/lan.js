@@ -72,7 +72,9 @@ Recommendations for mitigating vulnerabilities and improving security.<br>`,
         "news": "News",
         "about": "About",
         "portfolio": "Portfolio",
-        "contact": "Contact"
+        "contact": "Contact",
+        "project-htb-title": "HTB-LAB",
+        "project-htb-desc": `HTB Labs is an online, gamified penetration testing platform where users practice ethical hacking on vulnerable virtual machines ("boxes"), capture "flags", and build real-world cybersecurity skills.`
     },
     lv: {
         name: "Ričards Grava",
