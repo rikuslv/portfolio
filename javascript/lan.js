@@ -155,7 +155,8 @@ Ieteikumiem ievainojamību mazināšanai un drošības uzlabošanai.<br>`,
         "news": "Jaunumi",
         "about": "Par mani",
         "portfolio": "Portfolio",
-        "contact": "Kontakti"
+        "contact": "Kontakti",
+        "project-htb-desc": `HTB Labs ir tiešsaistes spēļota penetrācijas testēšanas platforma, kurā lietotāji praktizē ētisko uzlaušanu un drošības testēšanu uz ievainojamām virtuālajām mašīnām ("boxes"), iegūst karogus ("flags") un attīsta reālas kiberdrošības prasmes.`
     }
 }
 
