@@ -90,19 +90,6 @@
   <img id="lightbox-img" src="" alt="Zoomed view">
 </div>
 
-<div id="overlay" onclick="closeAdmin()"></div>
-<div id="admin-panel">
-  <span class="close-btn" onclick="closeAdmin()">X</span>
-  <h3 style="color: #00bcd4; margin-top: 0;" data-i18="admin-access">Admin Access</h3>
-  <input type="password" id="gh-token" placeholder="GitHub Personal Token" data-i18-placeholder="github-token-placeholder">
-  <input type="text" id="new-title" placeholder="Project Title" data-i18-placeholder="project-title-placeholder">
-  <input type="text" id="new-id" placeholder="Project ID (no spaces)" data-i18-placeholder="project-id-placeholder">
-  <input type="text" id="new-img" placeholder="Image Filename (e.g. test.png)" data-i18-placeholder="image-filename-placeholder">
-  <textarea id="new-desc" placeholder="English Description (HTML allowed)" data-i18-placeholder="description-placeholder"></textarea>
-  <button onclick="saveToGitHub()" style="width:100%; padding:12px; background:#00bcd4; color:white; border:none; cursor:pointer; font-weight:bold;" data-i18="upload-to-github">Upload to GitHub</button>
-  <p id="status" style="color:#00bcd4; font-size:12px; margin-top:10px; text-align:center;"></p>
-</div>
-
 <script>
   function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("active");
