@@ -74,7 +74,9 @@ Recommendations for mitigating vulnerabilities and improving security.<br>`,
         "portfolio": "Portfolio",
         "contact": "Contact",
         "project-htb-title": "HTB-LAB",
-        "project-htb-desc": `HTB Labs is an online, gamified penetration testing platform where users practice ethical hacking on vulnerable virtual machines ("boxes"), capture "flags", and build real-world cybersecurity skills.`
+        "project-htb-desc": `HTB Labs is an online, gamified penetration testing platform where users practice ethical hacking on vulnerable virtual machines ("boxes"), capture "flags", and build real-world cybersecurity skills.`,
+	"search-internship": "Looking for an internship from 01.02.2027 to 04.06.2027.",
+	"info": "The specific internship tasks are not yet known, but they will be provided closer to February 1st, 2027."
     },
     lv: {
         name: "Ričards Grava",
@@ -157,7 +159,9 @@ Ieteikumiem ievainojamību mazināšanai un drošības uzlabošanai.<br>`,
         "portfolio": "Portfolio",
         "contact": "Kontakti",
         "project-htb-title": "HTB-LAB",
-"project-htb-desc": `HTB Labs ir tiešsaistes spēļota penetrācijas testēšanas platforma, kurā lietotāji praktizē ētisko uzlaušanu un drošības testēšanu uz ievainojamām virtuālajām mašīnām ("boxes"), iegūst karogus ("flags") un attīsta reālas kiberdrošības prasmes.`
+"project-htb-desc": `HTB Labs ir tiešsaistes spēļota penetrācijas testēšanas platforma, kurā lietotāji praktizē ētisko uzlaušanu un drošības testēšanu uz ievainojamām virtuālajām mašīnām ("boxes"), iegūst karogus ("flags") un attīsta reālas kiberdrošības prasmes.`,
+	 "search-internship": "Meklēju prasksi uz 01.02.2027 - 04.06.2027",
+	 "info": "Prakses uzdevumi vēl nav zināmi, tuvāk 1.02.27 uzdevumi tiks doti."
     }
 }
 
