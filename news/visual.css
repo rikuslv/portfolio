@@ -48,7 +48,7 @@ body{
     pointer-events: auto;
 }
 
-
+#search,
 #news,
 #news1 {
   max-width: 900px;
@@ -59,12 +59,14 @@ body{
   border-radius: 12px;
 }
 
+#search,
 #news h2,
 #news1 h2 {
   font-size: 32px;
   margin-bottom: 18px;
 }
 
+#search
 #news h3,
 #news1 h3 {
   font-size: 22px;
